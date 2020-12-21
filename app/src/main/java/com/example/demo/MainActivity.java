@@ -29,6 +29,7 @@ TextView tt ;
         String password=passwordEdit.getText().toString();
        // tt =findViewById(R.id.textView);
         String type="login";
+        //String level="";
 
         Background background=new Background(this);
        background.execute(type, username, password);

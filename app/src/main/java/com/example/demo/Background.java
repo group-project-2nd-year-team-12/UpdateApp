@@ -121,13 +121,14 @@ public class Background extends AsyncTask<String,Void,String> {
 
     @Override
     protected String doInBackground(String... voids) {
-
+      // String level;
         String type=voids[0];
         String login_url="http://10.0.2.2/Android/login.php";
         if (type.equals("login")){
             try {
                 String username=voids[1];
                 String password=voids[2];
+              //  level=voids[3];
                 URL url=new URL(login_url);
                 HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");

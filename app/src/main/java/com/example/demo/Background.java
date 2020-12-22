@@ -121,14 +121,13 @@ public class Background extends AsyncTask<String,Void,String> {
 
     @Override
     protected String doInBackground(String... voids) {
-      // String level;
+
         String type=voids[0];
         String login_url="http://10.0.2.2/Android/login.php";
         if (type.equals("login")){
             try {
                 String username=voids[1];
                 String password=voids[2];
-              //  level=voids[3];
                 URL url=new URL(login_url);
                 HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -178,13 +177,13 @@ public class Background extends AsyncTask<String,Void,String> {
 //        alertDialog.setMessage(result);
 //        alertDialog.show();
        // pdLoading.dismiss();
-        if (result.equals("LOGIN SUCCESS")){
-            Intent i = new Intent(context,Second.class);
-            context.startActivity(i);
-        }else{
-            alertDialog.setMessage(result);
-            alertDialog.show();
-        }
+//        if (result.equals("LOGIN SUCCESS")){
+//            Intent i = new Intent(context,Second.class);
+//            context.startActivity(i);
+//        }else{
+//            alertDialog.setMessage(result);
+//            alertDialog.show();
+//        }
 
 //        if(result.equalsIgnoreCase("true"))
 //        {

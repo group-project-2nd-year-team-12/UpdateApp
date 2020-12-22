@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 EditText usernameEdit,passwordEdit;
-TextView tt ;
+TextView TextForget,TextRegister ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,8 @@ TextView tt ;
 
         usernameEdit=(EditText) findViewById(R.id.username);
         passwordEdit=(EditText) findViewById(R.id.password);
+        TextForget=findViewById(R.id.forgetp);
+        TextRegister=findViewById(R.id.register);
 
     }
     public void OnLogin(View view) throws ExecutionException, InterruptedException {
@@ -29,23 +31,31 @@ TextView tt ;
         String password=passwordEdit.getText().toString();
        // tt =findViewById(R.id.textView);
         String type="login";
-        //String level="";
 
         Background background=new Background(this);
-       background.execute(type, username, password);
-//                if (result.equals("LOGIN SUCCESS")){
-//                    Intent i = new Intent(this,Second.class);
-//                    this.startActivity(i);
-//                  // tt.setText(result);
-//                }else{
-//                    AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-//                    alertDialog.setMessage(result);
-//                    alertDialog.show();
-//                }
+       String  result = background.execute(type, username, password).get();
+                if (result.equals("LOGIN SUCCESS")){
+                    Intent i = new Intent(this,Second.class);
+                    this.startActivity(i);
+                  // tt.setText(result);
+                }else{
+                    AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+                    alertDialog.setMessage(result);
+                    alertDialog.show();
+                }
 
 
     }
 
+    public void Onforget(View view) {
+        Intent intent=new Intent(this,ForgetPassword.class);
+        startActivity(intent);
+    }
+
+    public void Onregister(View view) {
+        Intent intent=new Intent(this,Register.class);
+        startActivity(intent);
+    }
 }
 
 

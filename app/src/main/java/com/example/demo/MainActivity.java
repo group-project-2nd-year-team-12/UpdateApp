@@ -48,7 +48,7 @@ TextView TextForget,TextRegister ;
        String  result = background.execute(type, username, password,level).get();
                 if (result.equals("LOGIN SUCCESS")){
                     if (level.equals("boarder")){
-                        Intent i = new Intent(this,Second.class);
+                        Intent i = new Intent(this,HomeBO.class);
                         this.startActivity(i);
                     }else  if (level.equals("boardings_owner")){
                         Intent i = new Intent(this,Register.class);

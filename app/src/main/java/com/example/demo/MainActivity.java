@@ -7,7 +7,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
@@ -15,6 +18,7 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
 EditText usernameEdit,passwordEdit;
 TextView TextForget,TextRegister ;
+    Spinner myspinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +29,35 @@ TextView TextForget,TextRegister ;
         TextForget=findViewById(R.id.forgetp);
         TextRegister=findViewById(R.id.register);
 
+        myspinner=findViewById(R.id.level);
+
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.level,R.layout.support_simple_spinner_dropdown_item);
+        myspinner.setAdapter(adapter);
+
+
     }
     public void OnLogin(View view) throws ExecutionException, InterruptedException {
         String username=usernameEdit.getText().toString();
         String password=passwordEdit.getText().toString();
+
+        String level=myspinner.getSelectedItem().toString();
        // tt =findViewById(R.id.textView);
         String type="login";
 
         Background background=new Background(this);
-       String  result = background.execute(type, username, password).get();
+       String  result = background.execute(type, username, password,level).get();
                 if (result.equals("LOGIN SUCCESS")){
-                    Intent i = new Intent(this,Second.class);
-                    this.startActivity(i);
+                    if (level.equals("boarder")){
+                        Intent i = new Intent(this,Second.class);
+                        this.startActivity(i);
+                    }else  if (level.equals("boardings_owner")){
+                        Intent i = new Intent(this,Register.class);
+                        this.startActivity(i);
+                    }
+                    else  if (level.equals("food_supplier")){
+                        Intent i = new Intent(this,ForgetPassword.class);
+                        this.startActivity(i);
+                    }
                   // tt.setText(result);
                 }else{
                     AlertDialog alertDialog = new AlertDialog.Builder(this).create();

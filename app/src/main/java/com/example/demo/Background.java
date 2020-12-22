@@ -128,6 +128,7 @@ public class Background extends AsyncTask<String,Void,String> {
             try {
                 String username=voids[1];
                 String password=voids[2];
+                String level=voids[3];
                 URL url=new URL(login_url);
                 HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -136,7 +137,8 @@ public class Background extends AsyncTask<String,Void,String> {
                 OutputStream outputStream=httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
                 String post_data= URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"+
-                        URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
+                        URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&"+
+                        URLEncoder.encode("level","UTF-8")+"="+URLEncoder.encode(level,"UTF-8");
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();

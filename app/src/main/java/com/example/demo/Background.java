@@ -176,6 +176,7 @@ public class Background extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
+
 //        alertDialog.setMessage(result);
 //        alertDialog.show();
        // pdLoading.dismiss();

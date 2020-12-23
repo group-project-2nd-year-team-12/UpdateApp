@@ -7,6 +7,7 @@ package com.example.demo;
         import androidx.cardview.widget.CardView;
 
         import android.content.Intent;
+        import android.content.SharedPreferences;
         import android.os.Bundle;
         import android.view.Menu;
         import android.view.MenuInflater;
@@ -78,8 +79,19 @@ public class FoodPage extends AppCompatActivity {
                 break;
 
             case R.id.item2:
-                Intent intent1=new Intent(this,MainActivity.class);
-                startActivity(intent1);
+
+                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                if (sharedPreferences.contains("username")){
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.remove("username");
+                   // editor.commit();
+                    Intent intent1=new Intent(this,MainActivity.class);
+                    startActivity(intent1);
+
+                    Toast.makeText(this,"Logout Successfully",Toast.LENGTH_LONG).show();
+                }
+
+
                 //Toasty.success(this,"Logout succesfully",Toast.LENGTH_LONG).show();
                 //Toast.makeText(this,"Logout succesfully",Toast.LENGTH_LONG).show();
         }

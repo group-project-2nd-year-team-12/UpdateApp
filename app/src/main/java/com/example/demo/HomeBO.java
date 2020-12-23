@@ -6,7 +6,8 @@ import androidx.annotation.NonNull;
         import androidx.cardview.widget.CardView;
 
         import android.content.Intent;
-        import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.os.Bundle;
         import android.view.Menu;
         import android.view.MenuInflater;
         import android.view.MenuItem;
@@ -40,6 +41,9 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
         setSupportActionBar(toolbar);
         // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+        String username=sharedPreferences.getString("username","No name");
+
 
 
 
@@ -69,8 +73,17 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
 //                //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
 //                break;
             case R.id.item2:
-                Intent intent1=new Intent(this,MainActivity.class);
-                startActivity(intent1);
+                SharedPreferences sharedPreferences1=getSharedPreferences("details",MODE_PRIVATE);
+                if (sharedPreferences1.contains("username")){
+                    SharedPreferences.Editor editor=sharedPreferences1.edit();
+                    editor.remove("username");
+                  //  editor.putString("msg","Logged out Successfully");
+                    editor.commit();
+                    Intent intent1=new Intent(this,MainActivity.class);
+                    startActivity(intent1);
+                    Toast.makeText(this,"Logout Successfully",Toast.LENGTH_LONG).show();
+                }
+
                // Toasty.success(this,"Logout succesfully", Toast.LENGTH_LONG).show();
                 // Toast.makeText(this,"Successfully Logout",Toast.LENGTH_LONG).show();
 

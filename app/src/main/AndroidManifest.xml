@@ -16,7 +16,8 @@
         <activity android:name=".PayHistory" />
         <activity android:name=".PayRent" />
         <activity android:name=".ChatPage" />
-        <activity android:name=".profile" />
+        <activity android:name=".profile"
+            android:parentActivityName=".HomeBO"/>
         <activity android:name=".FoodPage"
             android:parentActivityName=".HomeBO"/>
         <activity

@@ -41,8 +41,7 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
         setSupportActionBar(toolbar);
         // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
-        String username=sharedPreferences.getString("username","No name");
+
 
 
 
@@ -79,9 +78,10 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                     editor.remove("username");
                   //  editor.putString("msg","Logged out Successfully");
                     editor.commit();
+                    Toast.makeText(this,"Logout Successfully",Toast.LENGTH_LONG).show();
                     Intent intent1=new Intent(this,MainActivity.class);
                     startActivity(intent1);
-                    Toast.makeText(this,"Logout Successfully",Toast.LENGTH_LONG).show();
+
                 }
 
                // Toasty.success(this,"Logout succesfully", Toast.LENGTH_LONG).show();
@@ -98,6 +98,9 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
         Intent i;
         switch (v.getId()){
             case R.id.c1:
+                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                String username=sharedPreferences.getString("username","No name");
+                Toast.makeText(this,"Logout Successfully"+username,Toast.LENGTH_LONG).show();
                 i=new Intent(this,BoardingPage.class);
                 startActivity(i);
                 break;
@@ -111,8 +114,13 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                 startActivity(i);
                 break;
             case R.id.c4:
-                i=new Intent(this,ChatPage.class);
+                SharedPreferences sharedPreferences2=getSharedPreferences("details",MODE_PRIVATE);
+                String username1=sharedPreferences2.getString("username","No name");
+                Toast.makeText(this,"Logout Successfully"+username1,Toast.LENGTH_LONG).show();
+
+                i=new Intent(this,MyAdsBOwner.class);
                 startActivity(i);
+
                 break;
 
 

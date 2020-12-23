@@ -11,15 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AcceptedOrder"></activity>
+        <activity android:name=".MyAdsBOwner"></activity>
+        <activity android:name=".AcceptedOrder" />
         <activity android:name=".OrderFood" />
         <activity android:name=".PayHistory" />
         <activity android:name=".PayRent" />
         <activity android:name=".ChatPage" />
-        <activity android:name=".profile"
-            android:parentActivityName=".HomeBO"/>
-        <activity android:name=".FoodPage"
-            android:parentActivityName=".HomeBO"/>
+        <activity
+            android:name=".profile"
+            android:parentActivityName=".HomeBO" />
+        <activity
+            android:name=".FoodPage"
+            android:parentActivityName=".HomeBO" />
         <activity
             android:name=".BoardingPage"
             android:parentActivityName=".HomeBO" />

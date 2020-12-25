@@ -15,12 +15,12 @@ android:background="@drawable/gradient3"
         android:id="@+id/include"/>
 
     <RelativeLayout
-        android:layout_width="340dp"
-        android:layout_height="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
 
         android:layout_marginTop="32dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="35dp">
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
 
 
 
@@ -29,7 +29,7 @@ android:background="@drawable/gradient3"
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/login1"
+            android:src="@drawable/th"
 
             android:id="@+id/profile"/>
 
@@ -46,7 +46,7 @@ android:background="@drawable/gradient3"
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="-20dp"
         android:rowCount="2"
         android:columnCount="2"
         android:layout_marginRight="10dp"
@@ -216,7 +216,13 @@ android:background="@drawable/gradient3"
 
     </GridLayout>
 
-
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2020 Bodima All right received"
+        android:textSize="16sp"
+        android:textAlignment="center"/>
 </LinearLayout>
 
 

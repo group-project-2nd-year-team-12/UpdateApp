@@ -23,7 +23,7 @@ public class MyAdsBOwner extends AppCompatActivity {
 //    String email=sharedPreferences.getString("username","no name");
 
    String email;
-    private static final String url1="http://10.0.2.2/Android/index.php";
+    private static final String url1="http://10.0.2.2/Android/files/index.php";
     ListView lv;
     ArrayList<String>holder=new ArrayList<>();
 
@@ -50,7 +50,9 @@ public class MyAdsBOwner extends AppCompatActivity {
                     for (int i=0;i<ja.length();i++){
                         jo=ja.getJSONObject(i);
                         String email=jo.getString("email");
+                        String name=jo.getString("first_name");
                         holder.add(email);
+                        holder.add(name);
                     }
 
                     ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,holder);

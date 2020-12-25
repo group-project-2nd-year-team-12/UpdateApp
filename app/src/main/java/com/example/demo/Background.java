@@ -123,7 +123,7 @@ public class Background extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... voids) {
 
         String type=voids[0];
-        String login_url="http://10.0.2.2/Android/login.php";
+        String login_url="http://10.0.2.2/Android/files/login.php";
         if (type.equals("login")){
             try {
                 String username=voids[1];

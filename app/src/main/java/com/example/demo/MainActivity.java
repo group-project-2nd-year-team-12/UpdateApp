@@ -81,12 +81,12 @@ TextView TextForget,TextRegister ;
     }
 
     public void Onforget(View view) {
-        Intent intent=new Intent(this,ForgetPassword.class);
+        Intent intent=new Intent(this,my_post_BO.class);
         startActivity(intent);
     }
 
     public void Onregister(View view) {
-        Intent intent=new Intent(this,Register.class);
+        Intent intent=new Intent(this,MyPostsF.class);
         startActivity(intent);
     }
 }

@@ -63,7 +63,7 @@ TextView TextForget,TextRegister ;
                         this.startActivity(i);
                         Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
                     }else  if (level.equals("boardings_owner")){
-                        Intent i = new Intent(this,Register.class);
+                        Intent i = new Intent(this,HomeBOwner.class);
                         this.startActivity(i);
                     }
                     else  if (level.equals("food_supplier")){

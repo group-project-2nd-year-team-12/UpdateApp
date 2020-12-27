@@ -5,6 +5,7 @@ package com.example.demo;
         import androidx.appcompat.app.AppCompatActivity;
 
         import android.content.Context;
+        import android.content.Intent;
         import android.graphics.Bitmap;
         import android.graphics.BitmapFactory;
         import android.net.Uri;
@@ -57,7 +58,16 @@ public class finalPractise extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String s = lv.getItemAtPosition(position).toString();
+                Intent intent=new Intent(getApplicationContext(),InsidePostdata.class);
 
+                intent.putExtra("lane",lane[position]);
+                intent.putExtra("categery",categery[position]);
+              intent.putExtra("girlsBoys",girlsBoys[position]);
+               intent.putExtra("city",city[position]);
+             //   intent.putExtra("image",image[position]);
+
+
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
             }
         });

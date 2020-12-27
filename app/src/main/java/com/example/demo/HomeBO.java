@@ -110,7 +110,7 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case  R.id.c3:
-                i=new Intent(this,HomePage_FS.class);
+                i=new Intent(this,ProfilePageB.class);
                 startActivity(i);
                 break;
             case R.id.c4:
@@ -118,7 +118,7 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                 String username1=sharedPreferences2.getString("username","No name");
                 Toast.makeText(this,"Logout Successfully"+username1,Toast.LENGTH_LONG).show();
 
-                i=new Intent(this,MyAdsBOwner.class);
+                i=new Intent(this,ProfilePageB.class);
                 startActivity(i);
 
                 break;

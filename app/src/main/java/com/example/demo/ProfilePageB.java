@@ -39,6 +39,8 @@ package com.example.demo;
 
 public class ProfilePageB extends AppCompatActivity {
 
+
+    String  emailShared;
     private static final String apiurl="http://10.0.2.2/Android/files/profile.php";
     ListView lv;
 
@@ -54,6 +56,9 @@ public class ProfilePageB extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page_b);
+
+        SharedPreferences sp=getApplicationContext().getSharedPreferences("details", Context.MODE_PRIVATE);
+         emailShared=sp.getString("username","No name");
 
         ///set the toolbar
         Toolbar toolbar=findViewById(R.id.toolbar);
@@ -110,6 +115,7 @@ public class ProfilePageB extends AppCompatActivity {
 
     public void fetch_data_into_array(View view)
     {
+        String qur="?username="+emailShared;
 
         class  dbManager extends AsyncTask<String,Void,String>
         {
@@ -170,7 +176,7 @@ public class ProfilePageB extends AppCompatActivity {
 
         }
         dbManager obj=new dbManager();
-        obj.execute(apiurl);
+        obj.execute(apiurl+qur);
 
     }
 

@@ -110,7 +110,7 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case  R.id.c3:
-                i=new Intent(this,my_post_BO.class);
+                i=new Intent(this,HomePage_FS.class);
                 startActivity(i);
                 break;
             case R.id.c4:

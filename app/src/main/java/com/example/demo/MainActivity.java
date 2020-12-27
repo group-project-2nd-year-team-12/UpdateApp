@@ -86,7 +86,7 @@ TextView TextForget,TextRegister ;
     }
 
     public void Onregister(View view) {
-        Intent intent=new Intent(this,MyPostsF.class);
+        Intent intent=new Intent(this,finalPractise.class);
         startActivity(intent);
     }
 }

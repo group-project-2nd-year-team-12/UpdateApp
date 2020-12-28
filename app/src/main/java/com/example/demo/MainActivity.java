@@ -65,10 +65,12 @@ TextView TextForget,TextRegister ;
                     }else  if (level.equals("boardings_owner")){
                         Intent i = new Intent(this,HomeBOwner.class);
                         this.startActivity(i);
+                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
                     }
                     else  if (level.equals("food_supplier")){
                         Intent i = new Intent(this,ForgetPassword.class);
                         this.startActivity(i);
+                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
                     }
                   // tt.setText(result);
                 }else{

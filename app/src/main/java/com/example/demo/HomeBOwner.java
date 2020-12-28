@@ -5,6 +5,7 @@ package com.example.demo;
         import androidx.cardview.widget.CardView;
 
         import android.content.Intent;
+        import android.content.SharedPreferences;
         import android.os.Bundle;
         import android.view.Menu;
         import android.view.MenuInflater;
@@ -94,8 +95,11 @@ public class HomeBOwner extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case  R.id.c3:
-             //   i=new Intent(this,ProfileBOwner.class);
-             //   startActivity(i);
+
+                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                String username=sharedPreferences.getString("username","No name");
+               i=new Intent(this,ProfilePageBO.class);
+               startActivity(i);
                 break;
             case R.id.c4:
               //  i=new Intent(this,ChatPageBOwner.class);

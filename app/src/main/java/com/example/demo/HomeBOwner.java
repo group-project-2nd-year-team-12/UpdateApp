@@ -90,7 +90,7 @@ public class HomeBOwner extends AppCompatActivity implements View.OnClickListene
                startActivity(i);
                 break;
             case R.id.c2:
-                i=new Intent(this,MyAdsBOwner.class);
+                i=new Intent(this,MyPostsBOwner.class);
                 startActivity(i);
                 break;
 

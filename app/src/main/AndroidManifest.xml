@@ -11,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfilePageBO"
-            android:parentActivityName=".HomeBOwner"/>
+        <activity android:name=".MyBordersInsideData"></activity>
+        <activity
+            android:name=".MyBoarders"
+            android:parentActivityName=".HomeBOwner" />
+        <activity
+            android:name=".ProfilePageBO"
+            android:parentActivityName=".HomeBOwner" />
         <activity
             android:name=".ProfilePageB"
             android:parentActivityName=".HomeBO" />

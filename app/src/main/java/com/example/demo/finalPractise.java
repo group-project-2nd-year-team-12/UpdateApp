@@ -62,10 +62,11 @@ public class finalPractise extends AppCompatActivity {
 
                 intent.putExtra("lane",lane[position]);
                 intent.putExtra("categery",categery[position]);
-              intent.putExtra("girlsBoys",girlsBoys[position]);
-               intent.putExtra("city",city[position]);
+                intent.putExtra("girlsBoys",girlsBoys[position]);
+                intent.putExtra("city",city[position]);
              //   intent.putExtra("image",image[position]);
 
+              //  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
@@ -167,7 +168,7 @@ public class finalPractise extends AppCompatActivity {
 
             //ImageView img=row.findViewById(R.id.img1);
             ImageView img=row.findViewById(R.id.profile);
-            TextView tv3=row.findViewById(R.id.address);
+            TextView tv3=row.findViewById(R.id.institute);
             TextView tv4=row.findViewById(R.id.telephone);
             TextView tv1=row.findViewById(R.id.name);
             TextView tv2=row.findViewById(R.id.email);

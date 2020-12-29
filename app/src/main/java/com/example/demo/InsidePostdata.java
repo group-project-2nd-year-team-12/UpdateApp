@@ -20,13 +20,13 @@ ImageView image;
         girlsBoys=findViewById(R.id.girlsBoys);
         city=findViewById(R.id.city);
 
-        image=findViewById(R.id.image);
+      // image=findViewById(R.id.image);
         Intent intent=getIntent();
         lane.setText(intent.getStringExtra("lane"));
         categery.setText(intent.getStringExtra("categery"));
         city.setText(intent.getStringExtra("city"));
         girlsBoys.setText(intent.getStringExtra("girlsBoys"));
 
-      // image.setImageResource(intent.getIntExtra("image",0));
+    //  image.setImageResource(intent.getIntExtra("image",0));
     }
 }

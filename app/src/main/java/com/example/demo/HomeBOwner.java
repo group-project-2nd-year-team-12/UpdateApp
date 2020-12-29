@@ -62,12 +62,12 @@ public class HomeBOwner extends AppCompatActivity implements View.OnClickListene
 
         switch (item.getItemId())
         {
-//            case R.id.item1:
-//                Intent intent=new Intent(this,HomeBOwner.class);
-//                startActivity(intent);
-//                Toasty.info(this,"Home page is again", Toast.LENGTH_LONG).show();
-//                //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
-//                break;
+            case R.id.item1:
+                Intent intent=new Intent(this,HomeBOwner.class);
+                startActivity(intent);
+                Toasty.info(this,"Home page is again", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
+                break;
             case R.id.item2:
                 Intent intent1=new Intent(this,MainActivity.class);
                 startActivity(intent1);
@@ -86,8 +86,8 @@ public class HomeBOwner extends AppCompatActivity implements View.OnClickListene
         Intent i;
         switch (v.getId()){
             case R.id.c1:
-              //  i=new Intent(this,Boarders.class);
-           //     startActivity(i);
+               i=new Intent(this,MyBoarders.class);
+               startActivity(i);
                 break;
             case R.id.c2:
                 i=new Intent(this,MyAdsBOwner.class);

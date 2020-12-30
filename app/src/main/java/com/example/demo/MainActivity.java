@@ -88,7 +88,7 @@ TextView TextForget,TextRegister ;
     }
 
     public void Onregister(View view) {
-        Intent intent=new Intent(this,finalPractise.class);
+        Intent intent=new Intent(this,Food.class);
         startActivity(intent);
     }
 }

@@ -32,7 +32,7 @@
             android:text="Near University Of Ruhuna"
             android:id="@+id/description"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
             android:text="10"
             android:id="@+id/postreview"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,7 +78,7 @@
             android:text="Room"
             android:id="@+id/category"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,7 +101,7 @@
             android:text="Boys"
             android:id="@+id/girlsBoys"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -125,7 +125,7 @@
             android:text="3"
             android:id="@+id/pcount"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
     </LinearLayout>
 
 </LinearLayout>

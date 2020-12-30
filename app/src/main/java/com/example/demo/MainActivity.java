@@ -68,7 +68,7 @@ TextView TextForget,TextRegister ;
                         Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
                     }
                     else  if (level.equals("food_supplier")){
-                        Intent i = new Intent(this,ForgetPassword.class);
+                        Intent i = new Intent(this,HomeFSupplier.class);
                         this.startActivity(i);
                         Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
                     }

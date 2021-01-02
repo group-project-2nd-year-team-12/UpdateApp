@@ -1,10 +1,5 @@
 package com.example.demo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +7,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import es.dmoral.toasty.Toasty;
 
@@ -85,6 +85,10 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             case R.id.c1:
                 i=new Intent(getApplicationContext(),ForgetPassword.class);
+                startActivity(i);
+                break;
+            case R.id.c4:
+                i=new Intent(getApplicationContext(),MyPostsFSupplier.class);
                 startActivity(i);
                 break;
             case R.id.c5:

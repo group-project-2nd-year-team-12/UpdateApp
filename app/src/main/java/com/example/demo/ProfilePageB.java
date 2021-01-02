@@ -22,6 +22,7 @@ package com.example.demo;
         import android.widget.Adapter;
         import android.widget.AdapterView;
         import android.widget.ArrayAdapter;
+        import android.widget.Button;
         import android.widget.ImageView;
         import android.widget.ListView;
         import android.widget.TextView;
@@ -43,6 +44,8 @@ public class ProfilePageB extends AppCompatActivity {
     String  emailShared;
     private static final String apiurl="http://10.0.2.2/Android/files/profile.php";
     ListView lv;
+    Button btnEdit;
+    String intentEmail,intentFirst,intentLast,intentIns,intentTel;
 
 
     private static String email[];
@@ -51,6 +54,8 @@ public class ProfilePageB extends AppCompatActivity {
     private static String institute[];
     private static String telephone[];
     private static String profile[];
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +71,26 @@ public class ProfilePageB extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         lv=(ListView)findViewById(R.id.lv);
+        btnEdit=(Button)findViewById(R.id.editProfile);
 
         fetch_data_into_array(lv);
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getApplicationContext(),ProfileEditB.class);
+
+
+              intent.putExtra("intentEmail",intentEmail);
+              intent.putExtra("intentFirst",intentFirst);
+              intent.putExtra("intentLast",intentLast);
+              intent.putExtra("intentIns",intentIns);
+              intent.putExtra("intentTel",intentTel);
+
+              startActivity(intent);
+            }
+        });
 
 
     }
@@ -223,12 +246,24 @@ public class ProfilePageB extends AppCompatActivity {
 
             TextView txttitlt=row.findViewById(R.id.title);
 
+
+
+
             String url=profile[position];
             txtname.setText(first_name[position]+" "+last_name[position]);
             txttitlt.setText(first_name[position]+" "+last_name[position]);
             txtemail.setText(email[position]);
             txtinstitute.setText(institute[position]);
             txttel.setText(telephone[position]);
+
+            intentEmail=email[position];
+            intentFirst=first_name[position];
+            intentLast=last_name[position];
+            intentIns=institute[position];
+            intentTel=telephone[position];
+
+
+
 
 
 

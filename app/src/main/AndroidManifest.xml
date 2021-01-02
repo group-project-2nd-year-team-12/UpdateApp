@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfilePageFS"></activity>
+        <activity android:name=".SearchPractise"></activity>
+        <activity android:name=".ProfileEditB" />
+        <activity android:name=".ProfilePageFS" />
         <activity android:name=".HomeFSupplier" />
         <activity android:name=".Food" />
         <activity

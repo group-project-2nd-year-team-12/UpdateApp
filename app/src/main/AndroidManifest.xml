@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyPostsFSupplier"
-            android:parentActivityName=".HomeFSupplier"/>
+        <activity android:name=".NewRequestBO"
+            android:parentActivityName=".MyRequestsBO"/>
+        <activity android:name=".MyRequestsBO"
+            android:parentActivityName=".HomeBOwner"/>
+        <activity
+            android:name=".MyPostsFSupplier"
+            android:parentActivityName=".HomeFSupplier" />
         <activity android:name=".SearchPractise" />
         <activity android:name=".ProfileEditB" />
-        <activity android:name=".ProfilePageFS"
-            android:parentActivityName=".HomeFSupplier"/>
+        <activity
+            android:name=".ProfilePageFS"
+            android:parentActivityName=".HomeFSupplier" />
         <activity android:name=".HomeFSupplier" />
         <activity android:name=".Food" />
         <activity

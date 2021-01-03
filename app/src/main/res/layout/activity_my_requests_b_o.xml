@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MyRequestsBO"
+android:background="@drawable/gradient2"
+
+    >
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+
+        android:background="#000080"
+        android:elevation="4dp"
+        app:title="My Requests"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:rowCount="3"
+        android:columnCount="1"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+
+        >
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="16dp"
+
+            android:id="@+id/c1"
+
+
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:src="@drawable/payrent"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:id="@+id/img1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Requets"
+                android:textSize="20sp"
+                android:textColor="#6f6f6f"
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingTop="30dp"
+                />
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="16dp"
+            android:id="@+id/c2"
+
+
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:src="@drawable/paymenthistory"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:id="@+id/img2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment History"
+                android:textSize="20sp"
+                android:textColor="#6f6f6f"
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingTop="30dp"
+                />
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="16dp"
+            android:id="@+id/c3"
+
+
+            >
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@drawable/bpagechat"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:id="@+id/img3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textSize="20sp"
+                android:textColor="#6f6f6f"
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                />
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </GridLayout>
+
+
+</LinearLayout>
+
+
+
+</ScrollView>

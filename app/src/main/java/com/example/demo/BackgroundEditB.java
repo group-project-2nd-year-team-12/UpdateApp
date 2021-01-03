@@ -126,25 +126,20 @@
 package com.example.demo;
 
         import android.app.AlertDialog;
-        import android.app.ProgressDialog;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.icu.util.Output;
-        import android.os.AsyncTask;
+import android.content.Context;
+import android.os.AsyncTask;
 
-        import java.io.BufferedReader;
-        import java.io.BufferedWriter;
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.io.InputStreamReader;
-        import java.io.OutputStream;
-        import java.io.OutputStreamWriter;
-        import java.net.HttpURLConnection;
-        import java.net.MalformedURLException;
-        import java.net.URL;
-        import java.net.URLEncoder;
-
-        import javax.net.ssl.HttpsURLConnection;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 
 
 public class BackgroundEditB extends AsyncTask<String,Void,String> {
@@ -160,13 +155,14 @@ public class BackgroundEditB extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... voids) {
 
         String type=voids[0];
-        String update_url="http://10.0.2.2/Android/files/updataB.php";
+        String update_url="http://10.0.2.2/Android/files/updateB.php";
         if (type.equals("updataB")){
             try {
                 String email=voids[1];
-                String name=voids[2];
-                String institute=voids[3];
-                String telephone=voids[4];
+                String first_name=voids[2];
+                String last_name=voids[3];
+                String institute=voids[4];
+                String telephone=voids[5];
                 URL url=new URL(update_url);
                 HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -175,7 +171,8 @@ public class BackgroundEditB extends AsyncTask<String,Void,String> {
                 OutputStream outputStream=httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
                 String post_data= URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"+
-                        URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"+
+                        URLEncoder.encode("first_name","UTF-8")+"="+URLEncoder.encode(first_name,"UTF-8")+"&"+
+                        URLEncoder.encode("last_name","UTF-8")+"="+URLEncoder.encode(last_name,"UTF-8")+"&"+
                         URLEncoder.encode("institute","UTF-8")+"="+URLEncoder.encode(institute,"UTF-8")+"&"+
                         URLEncoder.encode("telephone","UTF-8")+"="+URLEncoder.encode(telephone,"UTF-8");
 

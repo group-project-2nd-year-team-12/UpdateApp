@@ -1,41 +1,34 @@
 package com.example.demo;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.appcompat.widget.Toolbar;
-
         import android.content.Context;
-        import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
-        import android.net.Uri;
-        import android.os.AsyncTask;
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.Menu;
-        import android.view.MenuInflater;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Adapter;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.ImageView;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+        import android.widget.Button;
         import android.widget.ListView;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import org.json.JSONArray;
-        import org.json.JSONObject;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-        import java.io.BufferedReader;
-        import java.io.InputStream;
-        import java.io.InputStreamReader;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-        import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class ProfilePageBO extends AppCompatActivity {
 
@@ -52,6 +45,9 @@ public class ProfilePageBO extends AppCompatActivity {
     private static String NIC[];
  //   private static String profile[];
 
+    String intentEmail,intentfirst_name,intentlast_name,intentnic,intent_address;
+    Button Btneditprofile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +60,8 @@ public class ProfilePageBO extends AppCompatActivity {
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Btneditprofile=findViewById(R.id.editProfile);
 
         lv=findViewById(R.id.lv);
 
@@ -180,6 +178,20 @@ public class ProfilePageBO extends AppCompatActivity {
 
     }
 
+    public void onUpdate(View view) {
+
+        Intent intent=new Intent(getApplicationContext(),ProfileEditBO.class);
+
+        intent.putExtra("intentEmail",intentEmail);
+        intent.putExtra("intentfirst_name",intentfirst_name);
+        intent.putExtra("intentlast_name",intentlast_name);
+        intent.putExtra("intentnic",intentnic);
+        intent.putExtra("intent_address",intent_address);
+
+        startActivity(intent);
+
+    }
+
     class myadapter extends ArrayAdapter<String>
     {
         Context context;
@@ -230,6 +242,12 @@ public class ProfilePageBO extends AppCompatActivity {
             txtaddress.setText(address[position]);
             txtnic.setText(NIC[position]);
 
+            intentEmail=email[position];
+            intentfirst_name=first_name[position];
+            intentlast_name=last_name[position];
+
+            intentnic=NIC[position];
+            intent_address=address[position];
 
 
 

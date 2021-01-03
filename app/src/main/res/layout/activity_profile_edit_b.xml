@@ -29,12 +29,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ishan"
-            android:id="@+id/email"/>
+            android:id="@+id/first_name"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ishan"
-            android:id="@+id/name"/>
+            android:id="@+id/last_name"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

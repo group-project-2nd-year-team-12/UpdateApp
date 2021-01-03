@@ -135,8 +135,10 @@ public class ProfileEditB extends AppCompatActivity {
         String  result = background.execute(type,email, first, last,institute,telephone).get();
         if (result.equals("Successfully")){
 
+            Intent intent=new Intent(getApplicationContext(),ProfilePageB.class);
+            startActivity(intent);
 
-            Toast.makeText(getApplicationContext(),"Successfully",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
 
         }
 

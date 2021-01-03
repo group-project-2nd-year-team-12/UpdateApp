@@ -31,6 +31,7 @@ android:orientation="vertical">
     android:background="@color/colorPrimary"
     android:textColor="#FFF"
     android:layout_marginLeft="180dp"
-    android:layout_marginTop="50dp"/>
+    android:layout_marginTop="50dp"
+    android:onClick="onUpdate"/>
 
 </LinearLayout>

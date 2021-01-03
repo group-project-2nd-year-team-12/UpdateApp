@@ -11,10 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewRequestBO"
-            android:parentActivityName=".MyRequestsBO"/>
-        <activity android:name=".MyRequestsBO"
-            android:parentActivityName=".HomeBOwner"/>
+        <activity android:name=".ProfileEditBO"></activity>
+        <activity
+            android:name=".NewRequestBO"
+            android:parentActivityName=".MyRequestsBO" />
+        <activity
+            android:name=".MyRequestsBO"
+            android:parentActivityName=".HomeBOwner" />
         <activity
             android:name=".MyPostsFSupplier"
             android:parentActivityName=".HomeFSupplier" />

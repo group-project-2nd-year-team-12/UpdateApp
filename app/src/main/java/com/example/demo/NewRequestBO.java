@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -47,10 +48,13 @@ public class NewRequestBO extends AppCompatActivity {
     private String student_email[];
 
 
+    String Request_id;
 
 
      String emailShared;
     ListView lv;
+    Button btnAccept;
+    TextView txtishan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +71,15 @@ public class NewRequestBO extends AppCompatActivity {
 
 
         lv=(ListView) findViewById(R.id.listnewrequest);
+        btnAccept=findViewById(R.id.accept);
+        txtishan=findViewById(R.id.ishan);
 
 
 
         fetch_array_data(lv);
+
+
+
     }
 
     private void fetch_array_data(View view) {
@@ -152,6 +161,14 @@ public class NewRequestBO extends AppCompatActivity {
 
     }
 
+
+
+
+
+        //AcceptReqBO.php
+
+
+
     class MyAdapter extends ArrayAdapter<String>{
         Context context;
         String request_id[];
@@ -207,6 +224,8 @@ public class NewRequestBO extends AppCompatActivity {
             txtmessage.setText(message[position]);
             txtboarding_city.setText(boarding_city[position]);
             txtstudent_name.setText(student_name[position]);
+
+            Request_id=request_id[position];
 
 
 

@@ -32,6 +32,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 public class NewRequestBO extends AppCompatActivity {
 
@@ -234,23 +235,43 @@ public class NewRequestBO extends AppCompatActivity {
                   @Override
                   public void onClick(View v) {
                       txtishan.setText(Request_id);
-                      String type="AcceptReqBO";
 
-//                      BackgroundNewReqBO backgroundNewReqBO=new BackgroundNewReqBO(this);
-//                  backgroundNewReqBO.execute(type,Request_id);
-//                      try {
-//                          String result=backgroundNewReqBO.execute(type,Request_id).get();
-//                          if (result.equals("Successfully")){
-//                             // Intent intent=new Intent(getApplicationContext(),ProfilePageBO.class);
-//                             // startActivity(intent);
-//                              Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
-//                          }
-//                      } catch (ExecutionException e) {
-//
-//                          e.printStackTrace();
-//                      } catch (InterruptedException e) {
-//                          e.printStackTrace();
-//                      }
+                      String type="AcceptReqBO";
+//                       Intent intent=new Intent(getApplicationContext(),BackgroundNewReqBO.class);
+//                       intent.putExtra("type",type);
+//                       intent.putExtra("Request_id",Request_id);
+//                       startActivity(intent);
+                     // Toast.makeText(getApplicationContext(),"Successfully Updated"+Request_id,Toast.LENGTH_LONG).show();
+
+
+
+                      BackgroundNewReqBO backgroundNewReqBO=new BackgroundNewReqBO(this);
+
+                      try {
+                          String result=backgroundNewReqBO.execute(type,Request_id).get();
+                          if (result.equals("Successfully")){
+                              // Intent intent=new Intent(getApplicationContext(),ProfilePageBO.class);
+                              // startActivity(intent);
+                              Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
+                          }
+                      } catch (ExecutionException e) {
+
+                          e.printStackTrace();
+                      } catch (InterruptedException e) {
+                          e.printStackTrace();
+                      }
+
+
+
+
+
+
+
+
+
+
+
+
 
                   }
               });

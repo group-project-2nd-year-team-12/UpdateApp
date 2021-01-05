@@ -24,6 +24,7 @@ public class BackgroundNewReqBO extends AsyncTask<String,Void,String> {
 
 
 
+  //  Intent intent=getIntent();
     @Override
     protected String doInBackground(String... strings) {
 

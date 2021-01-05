@@ -191,6 +191,7 @@
                     android:textSize="16sp"
                     android:textColor="#fff"
                     android:background="#00C853"
+                    android:onClick="onUpdate"
                     android:id="@+id/accept"
 
                     android:paddingLeft="5dp"

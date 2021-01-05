@@ -209,12 +209,14 @@ public class NewRequestBO extends AppCompatActivity {
             TextView txtrequest_data=row.findViewById(R.id.request_data);
             TextView txtmessage=row.findViewById(R.id.message);
             TextView txtboarding_city=row.findViewById(R.id.city);
+         //   Button btnAccept=row.findViewById(R.id.accept);
+
+            btnAccept=row.findViewById(R.id.accept);
 
             ImageView imgpost=row.findViewById(R.id.requestimg);
             TextView txtstudent_name=row.findViewById(R.id.student_name);
 
-
-
+              txtishan=findViewById(R.id.ishan);
 
 
             String url=image[position];
@@ -226,6 +228,38 @@ public class NewRequestBO extends AppCompatActivity {
             txtstudent_name.setText(student_name[position]);
 
             Request_id=request_id[position];
+
+
+             btnAccept.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      txtishan.setText(Request_id);
+                      String type="AcceptReqBO";
+
+//                      BackgroundNewReqBO backgroundNewReqBO=new BackgroundNewReqBO(this);
+//                  backgroundNewReqBO.execute(type,Request_id);
+//                      try {
+//                          String result=backgroundNewReqBO.execute(type,Request_id).get();
+//                          if (result.equals("Successfully")){
+//                             // Intent intent=new Intent(getApplicationContext(),ProfilePageBO.class);
+//                             // startActivity(intent);
+//                              Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
+//                          }
+//                      } catch (ExecutionException e) {
+//
+//                          e.printStackTrace();
+//                      } catch (InterruptedException e) {
+//                          e.printStackTrace();
+//                      }
+
+                  }
+              });
+
+
+
+
+
+
 
 
 
@@ -264,7 +298,13 @@ public class NewRequestBO extends AppCompatActivity {
             obj.execute();
 
             return row;
+
+
         }
+
+
+
+
     }
 
 

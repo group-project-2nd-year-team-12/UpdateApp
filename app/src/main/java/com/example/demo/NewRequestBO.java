@@ -32,7 +32,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.ExecutionException;
 
 public class NewRequestBO extends AppCompatActivity {
 
@@ -72,8 +71,8 @@ public class NewRequestBO extends AppCompatActivity {
 
 
         lv=(ListView) findViewById(R.id.listnewrequest);
-        btnAccept=findViewById(R.id.accept);
-        txtishan=findViewById(R.id.ishan);
+      //  btnAccept=findViewById(R.id.accept);
+       // txtishan=findViewById(R.id.ishan);
 
 
 
@@ -164,9 +163,7 @@ public class NewRequestBO extends AppCompatActivity {
 
 
 
-
-
-        //AcceptReqBO.php
+    //AcceptReqBO.php
 
 
 
@@ -210,14 +207,14 @@ public class NewRequestBO extends AppCompatActivity {
             TextView txtrequest_data=row.findViewById(R.id.request_data);
             TextView txtmessage=row.findViewById(R.id.message);
             TextView txtboarding_city=row.findViewById(R.id.city);
-         //   Button btnAccept=row.findViewById(R.id.accept);
+          btnAccept=row.findViewById(R.id.accept);
 
-            btnAccept=row.findViewById(R.id.accept);
+          //  btnAccept=row.findViewById(R.id.accept);
 
             ImageView imgpost=row.findViewById(R.id.requestimg);
             TextView txtstudent_name=row.findViewById(R.id.student_name);
 
-              txtishan=findViewById(R.id.ishan);
+             txtishan=findViewById(R.id.ishan);
 
 
             String url=image[position];
@@ -245,21 +242,21 @@ public class NewRequestBO extends AppCompatActivity {
 
 
 
-                      BackgroundNewReqBO backgroundNewReqBO=new BackgroundNewReqBO(this);
-
-                      try {
-                          String result=backgroundNewReqBO.execute(type,Request_id).get();
-                          if (result.equals("Successfully")){
-                              // Intent intent=new Intent(getApplicationContext(),ProfilePageBO.class);
-                              // startActivity(intent);
-                              Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
-                          }
-                      } catch (ExecutionException e) {
-
-                          e.printStackTrace();
-                      } catch (InterruptedException e) {
-                          e.printStackTrace();
-                      }
+//                      BackgroundNewReqBO backgroundNewReqBO=new BackgroundNewReqBO(this);
+//
+//                      try {
+//                          String result=backgroundNewReqBO.execute(type,Request_id).get();
+//                          if (result.equals("Successfully")){
+//                              // Intent intent=new Intent(getApplicationContext(),ProfilePageBO.class);
+//                              // startActivity(intent);
+//                              Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
+//                          }
+//                      } catch (ExecutionException e) {
+//
+//                          e.printStackTrace();
+//                      } catch (InterruptedException e) {
+//                          e.printStackTrace();
+//                      }
 
 
 
@@ -327,6 +324,8 @@ public class NewRequestBO extends AppCompatActivity {
 
 
     }
+
+
 
 
 }

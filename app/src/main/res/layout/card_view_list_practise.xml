@@ -56,6 +56,14 @@ android:orientation="vertical">
             android:text="4.7"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
             android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textaddress"
+            android:id="@+id/btn"
+            android:text="ADD"/>
+
+
 
 
 

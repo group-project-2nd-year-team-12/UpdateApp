@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class AddasBoarderBO extends AppCompatActivity {
     RecyclerView recyclerView;
     ProductAdapter adapter;
 
+    String first_name;
     List<Product> productList;
 
     @Override
@@ -44,6 +46,8 @@ public class AddasBoarderBO extends AppCompatActivity {
 
 
        loadProducts();
+
+
 
 
 
@@ -77,6 +81,26 @@ public class AddasBoarderBO extends AppCompatActivity {
                             }
                             adapter=new ProductAdapter(AddasBoarderBO.this,productList);
                             recyclerView.setAdapter(adapter);
+
+                            adapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(int position) {
+                                    //productList.get(position)
+                                    Toast.makeText(AddasBoarderBO.this,"One item selected",Toast.LENGTH_LONG).show();
+                                }
+
+
+                                @Override
+                                public void onDelete(int position) {
+
+                                   // String type="AcceptReqBO";
+                                    Intent intent=new Intent(getApplicationContext(),HomeBOwner.class);
+                                    startActivity(intent);
+
+
+                                    Toast.makeText(AddasBoarderBO.this,"up  "+position,Toast.LENGTH_LONG).show();
+                                }
+                            });
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

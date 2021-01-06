@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     private Context mCtx;
     private List<Product> productList;
+    private OnItemClickListener mListener;
+    String name;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+        void onDelete(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener=listener;
+    }
 
     public ProductAdapter(Context mCtx, List<Product> productList) {
         this.mCtx = mCtx;
@@ -30,7 +42,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         LayoutInflater inflater=LayoutInflater.from(mCtx);
         View view=inflater.inflate(R.layout.card_view_list_practise,null);
 
-        ProductViewHolder holder=new ProductViewHolder(view);
+        ProductViewHolder holder=new ProductViewHolder(view,mListener);
         return holder;
     }
 
@@ -55,15 +67,46 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         ImageView imageView;
         TextView textfirst,textlast,textaddress;
+        Button button;
 
 
-        public ProductViewHolder(@NonNull View itemView) {
+        public ProductViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             imageView=itemView.findViewById(R.id.imageView);
             textfirst=itemView.findViewById(R.id.textFirst);
             textlast=itemView.findViewById(R.id.textLast);
             textaddress=itemView.findViewById(R.id.textaddress);
+            button=itemView.findViewById(R.id.btn);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (listener!=null){
+                        int postion=getAbsoluteAdapterPosition();
+                        if (postion!=RecyclerView.NO_POSITION){
+                            listener.onItemClick(postion);
+                        }
+                    }
+
+                }
+            });
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   // Toast.makeText(mCtx,"Updated",Toast.LENGTH_LONG).show();
+
+                    if (listener!=null){
+                        int postion=getAbsoluteAdapterPosition();
+                        if (postion!=RecyclerView.NO_POSITION){
+                            listener.onDelete(postion);
+                        }
+                    }
+                }
+            });
 
 
         }

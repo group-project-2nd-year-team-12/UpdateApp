@@ -88,10 +88,10 @@ public class MyRequestsBO extends AppCompatActivity implements View.OnClickListe
                 i=new Intent(this,NewRequestBO.class);
                 startActivity(i);
                 break;
-//            case R.id.c2:
-//                i=new Intent(this,MyPostsBOwner.class);
-//                startActivity(i);
-//                break;
+            case R.id.c2:
+                i=new Intent(this,AddasBoarderBO.class);
+                startActivity(i);
+                break;
 //
 //            case  R.id.c3:
 //

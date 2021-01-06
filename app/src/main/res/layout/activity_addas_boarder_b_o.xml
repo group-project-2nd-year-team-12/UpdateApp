@@ -20,11 +20,10 @@ android:orientation="vertical">
 
 </androidx.appcompat.widget.Toolbar>
 
-<ListView
+<androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/listboarder"
-    android:layout_marginBottom="10dp"
+    android:id="@+id/recyclerP"
     />
 
 </LinearLayout>

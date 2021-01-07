@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -64,7 +63,7 @@ public class AddasBoarderBO extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         try {
-                            JSONArray products=new JSONArray(response);
+                            final JSONArray products=new JSONArray(response);
 
                             for (int i=0;i<products.length();i++){
 
@@ -93,9 +92,10 @@ public class AddasBoarderBO extends AppCompatActivity {
                                 @Override
                                 public void onDelete(int position) {
 
-                                   // String type="AcceptReqBO";
-                                    Intent intent=new Intent(getApplicationContext(),HomeBOwner.class);
-                                    startActivity(intent);
+                                    String type="AcceptReqBO";
+
+                                   // Intent intent=new Intent(getApplicationContext(),HomeBOwner.class);
+                                 //   startActivity(intent);
 
 
                                     Toast.makeText(AddasBoarderBO.this,"up  "+position,Toast.LENGTH_LONG).show();

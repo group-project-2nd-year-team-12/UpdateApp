@@ -3,7 +3,6 @@ package com.example.demo;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,7 +18,7 @@ import java.net.URLEncoder;
 
 public class BackgroundNewReqBO extends AsyncTask<String,Void,String> {
     Context context;
-    BackgroundNewReqBO(View.OnClickListener ctx){context= (Context) ctx;}
+    BackgroundNewReqBO(Context ctx){context= ctx;}
     AlertDialog alertDialog;
 
 

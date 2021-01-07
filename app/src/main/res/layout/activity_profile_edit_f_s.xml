@@ -40,12 +40,12 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ishan"
-        android:id="@+id/nic"/>
+        android:id="@+id/address"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ishan"
-        android:id="@+id/address"/>
+        android:id="@+id/nic"/>
 
     <Button
         android:layout_width="match_parent"

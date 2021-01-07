@@ -37,8 +37,8 @@ public class BackgroundEditFS extends AsyncTask<String,Void,String> {
                 String email=strings[1];
                 String first_name=strings[2];
                 String last_name=strings[3];
-                String nic=strings[4];
-                String address=strings[5];
+                String address=strings[4];
+                String nic=strings[5];
                 URL url=new URL(update_url);
 
                 HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
@@ -51,8 +51,8 @@ public class BackgroundEditFS extends AsyncTask<String,Void,String> {
                 String post_data= URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"+
                         URLEncoder.encode("first_name","UTF-8")+"="+URLEncoder.encode(first_name,"UTF-8")+"&"+
                         URLEncoder.encode("last_name","UTF-8")+"="+URLEncoder.encode(last_name,"UTF-8")+"&"+
-                        URLEncoder.encode("nic","UTF-8")+"="+URLEncoder.encode(nic,"UTF-8")+"&"+
-                        URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(address,"UTF-8");
+                        URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(address,"UTF-8")+"&"+
+                        URLEncoder.encode("nic","UTF-8")+"="+URLEncoder.encode(nic,"UTF-8");
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();

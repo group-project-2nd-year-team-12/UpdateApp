@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -234,10 +235,10 @@ public class NewRequestBO extends AppCompatActivity {
                       txtishan.setText(Request_id);
 
                       String type="AcceptReqBO";
-//                       Intent intent=new Intent(getApplicationContext(),BackgroundNewReqBO.class);
-//                       intent.putExtra("type",type);
-//                       intent.putExtra("Request_id",Request_id);
-//                       startActivity(intent);
+                       Intent intent=new Intent(getApplicationContext(),Register.class);
+                       intent.putExtra("type",type);
+                       intent.putExtra("Request_id",Request_id);
+                       startActivity(intent);
                      // Toast.makeText(getApplicationContext(),"Successfully Updated"+Request_id,Toast.LENGTH_LONG).show();
 
 

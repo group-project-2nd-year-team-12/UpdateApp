@@ -55,6 +55,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.textlast.setText(product.getLast_name());
         holder.textaddress.setText(product.getAddress());
 
+
         Glide.with(mCtx).load(product.getImage()).into(holder.imageView);
     }
 
@@ -101,9 +102,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
                     if (listener!=null){
                         int postion=getAbsoluteAdapterPosition();
+
                         if (postion!=RecyclerView.NO_POSITION){
                             listener.onDelete(postion);
+
                         }
+
                     }
                 }
             });

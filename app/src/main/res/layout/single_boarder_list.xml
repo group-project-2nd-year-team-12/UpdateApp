@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="10dp"
     android:background="#ffffff"
+    android:orientation="horizontal"
+
   >
 
     <androidx.cardview.widget.CardView
@@ -28,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ishan reshmika"
                 android:id="@+id/txtname"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginTop="10dp"
                 android:textColor="#000"
                 android:textSize="20sp"
@@ -38,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="Moratuwa Boarders"
                 android:id="@+id/txtcity"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="105dp"
                 android:layout_marginTop="5dp"
                 android:textSize="16sp"
                 android:textStyle="italic"

@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
         android:layout_height="wrap_content"
+        app:title="Edit Profile"
 
         android:background="#000080"
         android:elevation="4dp"
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ishan"
+
             android:id="@+id/first_name"/>
         <EditText
             android:layout_width="match_parent"

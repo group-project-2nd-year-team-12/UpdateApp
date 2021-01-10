@@ -1,19 +1,18 @@
 package com.example.demo;
 
-import androidx.annotation.NonNull;
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.appcompat.widget.Toolbar;
-        import androidx.cardview.widget.CardView;
-
-        import android.content.Intent;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-        import android.view.Menu;
-        import android.view.MenuInflater;
-        import android.view.MenuItem;
-        import android.view.View;
-import android.widget.ListView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
       //  import es.dmoral.toasty.Toasty;
 
@@ -120,7 +119,7 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                 String username1=sharedPreferences2.getString("username","No name");
                 Toast.makeText(this,"Logout Successfully"+username1,Toast.LENGTH_LONG).show();
 
-                i=new Intent(this,ProfilePageB.class);
+                i=new Intent(this,ChatApp.class);
                 startActivity(i);
 
                 break;

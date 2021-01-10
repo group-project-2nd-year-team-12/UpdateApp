@@ -35,7 +35,8 @@
         <activity
             android:name=".MyPostsBOwner"
             android:parentActivityName=".HomeBOwner" />
-        <activity android:name=".MyBordersInsideData" />
+        <activity android:name=".MyBordersInsideData"
+            android:parentActivityName=".MyBoarders"/>
         <activity
             android:name=".MyBoarders"
             android:parentActivityName=".HomeBOwner" />

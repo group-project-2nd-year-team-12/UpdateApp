@@ -1,11 +1,12 @@
 package com.example.demo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class InsidePostdata extends AppCompatActivity {
 TextView lane,categery,girlsBoys,city;
@@ -14,6 +15,14 @@ ImageView image;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inside_postdata);
+
+        ///set the toolbar
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
 
         lane=findViewById(R.id.lane);
         categery=findViewById(R.id.categery);
@@ -29,4 +38,6 @@ ImageView image;
 
     //  image.setImageResource(intent.getIntExtra("image",0));
     }
+
+
 }

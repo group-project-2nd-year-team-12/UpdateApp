@@ -38,13 +38,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Moratuwa Boarders"
+                android:text="Boarding place: Dalthara"
+
                 android:id="@+id/txtcity"
-                android:layout_marginLeft="105dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginTop="5dp"
                 android:textSize="16sp"
                 android:textStyle="italic"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="#808080"/>
         </LinearLayout>
 
 

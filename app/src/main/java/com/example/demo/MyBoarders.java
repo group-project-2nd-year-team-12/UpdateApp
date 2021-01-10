@@ -1,41 +1,38 @@
 package com.example.demo;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.appcompat.widget.Toolbar;
-
         import android.content.Context;
-        import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
-        import android.net.Uri;
-        import android.os.AsyncTask;
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.Menu;
-        import android.view.MenuInflater;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Adapter;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.ImageView;
-        import android.widget.ListView;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import org.json.JSONArray;
-        import org.json.JSONObject;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-        import java.io.BufferedReader;
-        import java.io.InputStream;
-        import java.io.InputStreamReader;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-        import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MyBoarders extends AppCompatActivity {
 
@@ -258,7 +255,7 @@ public class MyBoarders extends AppCompatActivity {
             String url=profile[position];
             txtname.setText(first_name[position]+" "+last_name[position]);
 
-            txtcity.setText(city[position]+" boarder");
+            txtcity.setText("Boarding place : "+city[position]);
 
 
 

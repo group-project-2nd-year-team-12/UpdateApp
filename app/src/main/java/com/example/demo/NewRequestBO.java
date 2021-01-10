@@ -179,7 +179,7 @@ public class NewRequestBO extends AppCompatActivity {
         String student_name[];
 
         public MyAdapter(Context context, String request_id[],String student_email[],String request_data[],String message[],String boarding_city[],String image[],String student_name[]) {
-            super(context, R.layout.list_new_request_bo,R.id.request_id,request_id);
+            super(context, R.layout.card_newreq_list,R.id.request_id,request_id);
 
             this.context=context;
             this.request_id=request_id;
@@ -200,7 +200,7 @@ public class NewRequestBO extends AppCompatActivity {
 
 
             LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row=inflater.inflate(R.layout.list_new_request_bo,parent,false);
+            View row=inflater.inflate(R.layout.card_newreq_list,parent,false);
 
 
             TextView txtrequest_id=row.findViewById(R.id.request_id);

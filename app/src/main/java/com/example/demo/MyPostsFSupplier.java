@@ -252,7 +252,7 @@ public class MyPostsFSupplier extends AppCompatActivity {
                         URL connection = new URL(url);
                         InputStream input = connection.openStream();
                         Bitmap myBitmap = BitmapFactory.decodeStream(input);
-                        Bitmap resized = Bitmap.createScaledBitmap(myBitmap, 300, 300, true);
+                        Bitmap resized = Bitmap.createScaledBitmap(myBitmap, 400, 300, true);
                         return resized;
                     } catch (Exception e) {
                         Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();

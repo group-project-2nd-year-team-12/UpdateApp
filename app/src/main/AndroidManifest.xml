@@ -29,7 +29,8 @@
             android:name=".MyPostsFSupplier"
             android:parentActivityName=".HomeFSupplier" />
         <activity android:name=".SearchPractise" />
-        <activity android:name=".ProfileEditB" />
+        <activity android:name=".ProfileEditB"
+            android:parentActivityName=".ProfilePageB"/>
         <activity
             android:name=".ProfilePageFS"
             android:parentActivityName=".HomeFSupplier" />

@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.concurrent.ExecutionException;
 
 public class ProfileEditB extends AppCompatActivity {
-    TextView txtemail,txtName,txtInstitute,txtTel;
+
     EditText Editfirst_name,Editlast_name,EditInstitute,EditTel,Editemail;
     Button btnupdate;
     String email;
@@ -22,6 +22,17 @@ public class ProfileEditB extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit_b);
+
+
+        //set toolbar
+        Toolbar toolbar =findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+
         Editfirst_name=findViewById(R.id.first_name);
         Editlast_name=findViewById(R.id.last_name);
         EditInstitute=findViewById(R.id.institute);
@@ -38,10 +49,7 @@ public class ProfileEditB extends AppCompatActivity {
 
 
         btnupdate=findViewById(R.id.update);
-        txtemail=findViewById(R.id.email1);
-        txtName=findViewById(R.id.name1);
-        txtInstitute=findViewById(R.id.institute1);
-        txtTel=findViewById(R.id.telephone1);
+
 
 
 
@@ -121,11 +129,7 @@ public class ProfileEditB extends AppCompatActivity {
         String institute=EditInstitute.getText().toString();
         String telephone=EditTel.getText().toString();
 //
-        txtemail.setText(first);
-                txtName.setText(last);
-                txtInstitute.setText(institute);
-                txtTel.setText(telephone);
-                txtTel.setText(telephone);
+
 
 
         String type="updataB";

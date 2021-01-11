@@ -1,30 +1,22 @@
 package com.example.demo;
 
 
-import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.appcompat.widget.Toolbar;
-        import androidx.cardview.widget.CardView;
-
-        import android.content.Context;
-        import android.content.Intent;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.Menu;
-        import android.view.MenuInflater;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Adapter;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.ImageView;
-        import android.widget.ListAdapter;
-        import android.widget.ListView;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
         //import es.dmoral.toasty.Toasty;
 
@@ -95,16 +87,27 @@ public class BoardingPage extends AppCompatActivity {
                 break;
 
             case R.id.item2:
-                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
-                if (sharedPreferences.contains("username")){
-                    SharedPreferences.Editor editor=sharedPreferences.edit();
-                    editor.remove("username");
-                    Intent intent1=new Intent(this,MainActivity.class);
-                    startActivity(intent1);
-                    Toast.makeText(this,"Succesfully Logout",Toast.LENGTH_LONG).show();
-                }
 
-             //   Toasty.success(this,"Logout succesfully",Toast.LENGTH_LONG).show();
+                AlertDialog.Builder alert=new AlertDialog.Builder(BoardingPage.this);
+                alert.setMessage("Are you want to logout?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                        if (sharedPreferences.contains("username")){
+                            SharedPreferences.Editor editor=sharedPreferences.edit();
+                            editor.remove("username");
+                            Intent intent1=new Intent(BoardingPage.this,MainActivity.class);
+                            startActivity(intent1);
+                            Toast.makeText(BoardingPage.this,"Succesfully Logout",Toast.LENGTH_LONG).show();
+                        }
+
+                        //   Toasty.success(this,"Logout succesfully",Toast.LENGTH_LONG).show();
+                    }
+                }).setNegativeButton("Cancel",null).setCancelable(false);
+                AlertDialog alertDialog=alert.create();
+                alertDialog.show();
+
+
                 //
                 break;
         }

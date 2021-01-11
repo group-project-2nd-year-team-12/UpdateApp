@@ -1,42 +1,40 @@
 package com.example.demo;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.appcompat.widget.Toolbar;
-
         import android.content.Context;
+        import android.content.DialogInterface;
         import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
-        import android.net.Uri;
-        import android.os.AsyncTask;
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.Menu;
-        import android.view.MenuInflater;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Adapter;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.Button;
-        import android.widget.ImageView;
-        import android.widget.ListView;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import org.json.JSONArray;
-        import org.json.JSONObject;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+        import androidx.appcompat.app.AlertDialog;
+        import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-        import java.io.BufferedReader;
-        import java.io.InputStream;
-        import java.io.InputStreamReader;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-        import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class ProfilePageB extends AppCompatActivity {
 
@@ -118,14 +116,26 @@ public class ProfilePageB extends AppCompatActivity {
                 break;
 
             case R.id.item2:
-                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
-                if (sharedPreferences.contains("username")){
-                    SharedPreferences.Editor editor=sharedPreferences.edit();
-                    editor.remove("username");
-                    Intent intent1=new Intent(this,MainActivity.class);
-                    startActivity(intent1);
-                    Toast.makeText(this,"Succesfully Logout",Toast.LENGTH_LONG).show();
-                }
+
+                AlertDialog.Builder alert=new AlertDialog.Builder(ProfilePageB.this);
+                alert.setMessage("Are you want to logout?").
+                        setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                                if (sharedPreferences.contains("username")){
+                                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                                    editor.remove("username");
+                                    Intent intent1=new Intent(ProfilePageB.this,MainActivity.class);
+                                    startActivity(intent1);
+                                    Toast.makeText(ProfilePageB.this,"Succesfully Logout",Toast.LENGTH_LONG).show();
+                                }
+
+                            }
+                        }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                AlertDialog alertDialog=alert.create();
+                alertDialog.show();
 
                 //   Toasty.success(this,"Logout succesfully",Toast.LENGTH_LONG).show();
                 //

@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -36,7 +38,7 @@ import java.net.URL;
 
 public class NewRequestBO extends AppCompatActivity {
 
-    private static final String apiurl="http://10.0.2.2/Android/files/newRequests.php";
+    private static  String apiurl="http://10.0.2.2/Android/files/newRequests.php";
 
 
     private String request_id[];
@@ -234,16 +236,30 @@ public class NewRequestBO extends AppCompatActivity {
              btnAccept.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
+
+                      AlertDialog.Builder alert=new AlertDialog.Builder(NewRequestBO.this);
+                      alert.setMessage("Are you want to accept request?").
+                      setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                          @Override
+                          public void onClick(DialogInterface dialog, int which) {
+
+                              String type="AcceptReqBO";
+                              Intent intent=new Intent(getApplicationContext(),Register.class);
+                              intent.putExtra("type",type);
+                              intent.putExtra("Request_id",Request_id);
+                              startActivity(intent);
+
+
+                              Toast.makeText(getApplicationContext(),"Successfully Updated"+Request_id,Toast.LENGTH_LONG).show();
+
+                          }
+                      }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                      AlertDialog alertDialog=alert.create();
+                      alertDialog.show();
                      // txtishan.setText(Request_id);
 
-                      String type="AcceptReqBO";
-                       Intent intent=new Intent(getApplicationContext(),Register.class);
-                       intent.putExtra("type",type);
-                       intent.putExtra("Request_id",Request_id);
-                       startActivity(intent);
 
-
-                      Toast.makeText(getApplicationContext(),"Successfully Updated"+Request_id,Toast.LENGTH_LONG).show();
 
 
 
@@ -282,11 +298,25 @@ public class NewRequestBO extends AppCompatActivity {
              btnCancel.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-                     String type="CancelReqBO";
-                     Intent intent=new Intent(getApplicationContext(),CancelReqBO.class);
-                     intent.putExtra("type",type);
-                     intent.putExtra("request_id",Request_id);
-                     startActivity(intent);
+
+
+                     AlertDialog.Builder alert=new AlertDialog.Builder(NewRequestBO.this).
+                             setMessage("Are you want to cancel request?").
+                             setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialog, int which) {
+                                     String type="CancelReqBO";
+                                     Intent intent=new Intent(getApplicationContext(),CancelReqBO.class);
+                                     intent.putExtra("type",type);
+                                     intent.putExtra("request_id",Request_id);
+                                     startActivity(intent);
+
+                                 }
+                             }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                     AlertDialog alertDialog=alert.create();
+                     alertDialog.show();
+
 
                  }
              });

@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CancelReqBO"></activity>
+        <activity android:name=".AddasBoarderNew"
+            android:parentActivityName=".MyRequestsBO"/>
+        <activity android:name=".CancelReqBO" />
         <activity android:name=".ChatApp" />
         <activity android:name=".AddasBoarderBO" />
         <activity android:name=".ProfileEditFS" />

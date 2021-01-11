@@ -3,6 +3,7 @@ package com.example.demo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,8 +35,9 @@ public class Register extends AppCompatActivity {
                           String result=backgroundNewReqBO.execute(type,req).get();
                           if (result.equals("Successfully")){
                                Intent intent1=new Intent(Register.this,NewRequestBO.class);
+                              Toast.makeText(getApplicationContext(),"Request Accepted",Toast.LENGTH_LONG).show();
                                startActivity(intent1);
-                             // Toast.makeText(getApplicationContext(),"Successfully Updated",Toast.LENGTH_LONG).show();
+
                           }
                       } catch (ExecutionException e) {
 

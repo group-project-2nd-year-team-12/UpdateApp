@@ -31,7 +31,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="edit profile"
-        android:background="@color/colorPrimary"
+        android:background="#000080"
         android:textColor="#FFF"
         android:onClick="onUpdateFS"
         android:layout_marginLeft="180dp"

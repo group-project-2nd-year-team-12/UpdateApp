@@ -54,7 +54,7 @@ public class NewRequestBO extends AppCompatActivity {
 
      String emailShared;
     ListView lv;
-    Button btnAccept;
+    Button btnAccept,btnCancel;
     TextView txtishan;
 
     @Override
@@ -209,6 +209,7 @@ public class NewRequestBO extends AppCompatActivity {
             TextView txtmessage=row.findViewById(R.id.message);
             TextView txtboarding_city=row.findViewById(R.id.city);
           btnAccept=row.findViewById(R.id.accept);
+          btnCancel=row.findViewById(R.id.cancel);
 
           //  btnAccept=row.findViewById(R.id.accept);
 
@@ -226,20 +227,23 @@ public class NewRequestBO extends AppCompatActivity {
             txtboarding_city.setText(boarding_city[position]);
             txtstudent_name.setText(student_name[position]);
 
+
             Request_id=request_id[position];
 
 
              btnAccept.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
-                      txtishan.setText(Request_id);
+                     // txtishan.setText(Request_id);
 
                       String type="AcceptReqBO";
                        Intent intent=new Intent(getApplicationContext(),Register.class);
                        intent.putExtra("type",type);
                        intent.putExtra("Request_id",Request_id);
                        startActivity(intent);
-                     // Toast.makeText(getApplicationContext(),"Successfully Updated"+Request_id,Toast.LENGTH_LONG).show();
+
+
+                      Toast.makeText(getApplicationContext(),"Successfully Updated"+Request_id,Toast.LENGTH_LONG).show();
 
 
 
@@ -273,6 +277,20 @@ public class NewRequestBO extends AppCompatActivity {
 
                   }
               });
+
+
+             btnCancel.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     String type="CancelReqBO";
+                     Intent intent=new Intent(getApplicationContext(),CancelReqBO.class);
+                     intent.putExtra("type",type);
+                     intent.putExtra("request_id",Request_id);
+                     startActivity(intent);
+
+                 }
+             });
+
 
 
 

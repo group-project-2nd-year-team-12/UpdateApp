@@ -10,9 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ChatApp"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".CancelReqBO"></activity>
+        <activity android:name=".ChatApp" />
         <activity android:name=".AddasBoarderBO" />
         <activity android:name=".ProfileEditFS" />
         <activity android:name=".ProfileEditBO" />
@@ -35,8 +36,9 @@
         <activity
             android:name=".MyPostsBOwner"
             android:parentActivityName=".HomeBOwner" />
-        <activity android:name=".MyBordersInsideData"
-            android:parentActivityName=".MyBoarders"/>
+        <activity
+            android:name=".MyBordersInsideData"
+            android:parentActivityName=".MyBoarders" />
         <activity
             android:name=".MyBoarders"
             android:parentActivityName=".HomeBOwner" />

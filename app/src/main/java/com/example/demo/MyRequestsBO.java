@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -68,10 +71,24 @@ public class MyRequestsBO extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
                 break;
             case R.id.item2:
-                Intent intent1=new Intent(this,MainActivity.class);
-                startActivity(intent1);
-                Toasty.success(this,"Succesfully Logout", Toast.LENGTH_LONG).show();
-                // Toast.makeText(this,"Successfully Logout",Toast.LENGTH_LONG).show();
+
+                AlertDialog.Builder alert=new AlertDialog.Builder(MyRequestsBO.this);
+                alert.setMessage("Are you want to logout?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent1=new Intent(MyRequestsBO.this,MainActivity.class);
+                        startActivity(intent1);
+                        Toasty.success(MyRequestsBO.this,"Succesfully Logout", Toast.LENGTH_LONG).show();
+                        // Toast.makeText(this,"Successfully Logout",Toast.LENGTH_LONG).show();
+
+                    }
+                }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                AlertDialog alertDialog=alert.create();
+                alertDialog.show();
+
+
+
 
                 break;
 
@@ -92,14 +109,14 @@ public class MyRequestsBO extends AppCompatActivity implements View.OnClickListe
                 i=new Intent(this,AddasBoarderBO.class);
                 startActivity(i);
                 break;
-//
-//            case  R.id.c3:
-//
-//                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
-//                String username=sharedPreferences.getString("username","No name");
-//                i=new Intent(this,ProfilePageBO.class);
-//                startActivity(i);
-//                break;
+
+            case  R.id.c3:
+
+                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                String username=sharedPreferences.getString("username","No name");
+                i=new Intent(this,AddasBoarderNew.class);
+                startActivity(i);
+                break;
 
 
 

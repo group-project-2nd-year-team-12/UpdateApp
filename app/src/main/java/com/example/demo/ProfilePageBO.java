@@ -1,7 +1,8 @@
 package com.example.demo;
 
         import android.content.Context;
-import android.content.Intent;
+        import android.content.DialogInterface;
+        import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,7 +20,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AlertDialog;
+        import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import org.json.JSONArray;
@@ -91,14 +93,27 @@ public class ProfilePageBO extends AppCompatActivity {
                 break;
 
             case R.id.item2:
-                SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
-                if (sharedPreferences.contains("username")){
-                    SharedPreferences.Editor editor=sharedPreferences.edit();
-                    editor.remove("username");
-                    Intent intent1=new Intent(this,MainActivity.class);
-                    startActivity(intent1);
-                    Toast.makeText(this,"Succesfully Logout",Toast.LENGTH_LONG).show();
-                }
+                AlertDialog.Builder alert=new AlertDialog.Builder(ProfilePageBO.this);
+                alert.setMessage("Are you want to logout?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                        if (sharedPreferences.contains("username")){
+                            SharedPreferences.Editor editor=sharedPreferences.edit();
+                            editor.remove("username");
+                            Intent intent1=new Intent(ProfilePageBO.this,MainActivity.class);
+                            startActivity(intent1);
+                            Toast.makeText(ProfilePageBO.this,"Succesfully Logout",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                AlertDialog alertDialog=alert.create();
+                alertDialog.show();
+
+
+
+
 
                 //   Toasty.success(this,"Logout succesfully",Toast.LENGTH_LONG).show();
                 //

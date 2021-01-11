@@ -1,4 +1,5 @@
 package com.example.demo;
+        import android.content.DialogInterface;
         import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,7 +10,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AlertDialog;
+        import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
@@ -69,10 +71,20 @@ public class HomeBOwner extends AppCompatActivity implements View.OnClickListene
                 //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
                 break;
             case R.id.item2:
-                Intent intent1=new Intent(this,MainActivity.class);
-                startActivity(intent1);
-                Toasty.success(this,"Succesfully Logout", Toast.LENGTH_LONG).show();
-                // Toast.makeText(this,"Successfully Logout",Toast.LENGTH_LONG).show();
+
+                AlertDialog.Builder alert=new AlertDialog.Builder(HomeBOwner.this);
+                alert.setMessage("Are you want to logout?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent1=new Intent(HomeBOwner.this,MainActivity.class);
+                        startActivity(intent1);
+                        Toasty.success(HomeBOwner.this,"Succesfully Logout", Toast.LENGTH_LONG).show();
+                        // Toast.makeText(this,"Successfully Logout",Toast.LENGTH_LONG).show();
+                    }
+                }).setNegativeButton("Cancel",null).setCancelable(false);
+                AlertDialog alertDialog=alert.create();
+                alertDialog.show();
+
 
                 break;
 

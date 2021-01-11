@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -73,17 +75,30 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
 //                //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
 //                break;
             case R.id.item2:
-                SharedPreferences sharedPreferences1=getSharedPreferences("details",MODE_PRIVATE);
-                if (sharedPreferences1.contains("username")){
-                    SharedPreferences.Editor editor=sharedPreferences1.edit();
-                    editor.remove("username");
-                  //  editor.putString("msg","Logged out Successfully");
-                    editor.commit();
-                    Toast.makeText(this,"Logout Successfully",Toast.LENGTH_LONG).show();
-                    Intent intent1=new Intent(this,MainActivity.class);
-                    startActivity(intent1);
 
-                }
+                AlertDialog.Builder alert=new AlertDialog.Builder(HomeBO.this);
+                alert.setMessage("Are you want to logout?").
+                        setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences sharedPreferences1=getSharedPreferences("details",MODE_PRIVATE);
+                                if (sharedPreferences1.contains("username")){
+                                    SharedPreferences.Editor editor=sharedPreferences1.edit();
+                                    editor.remove("username");
+                                    //  editor.putString("msg","Logged out Successfully");
+                                    editor.commit();
+                                    Toast.makeText(HomeBO.this,"Logout Successfully",Toast.LENGTH_LONG).show();
+                                    Intent intent1=new Intent(HomeBO.this,MainActivity.class);
+                                    startActivity(intent1);
+
+                                }
+                            }
+                        }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                AlertDialog alertDialog=alert.create();
+                alert.show();
+
+
 
                // Toasty.success(this,"Logout succesfully", Toast.LENGTH_LONG).show();
                 // Toast.makeText(this,"Successfully Logout",Toast.LENGTH_LONG).show();

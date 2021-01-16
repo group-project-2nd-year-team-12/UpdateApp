@@ -40,8 +40,8 @@ public class AddasBoarderNew extends AppCompatActivity {
     private String NIC[];
     private String telephone[];
     private String institute[];
-    private String B_post_id[];
-    private String keymoneyAmount[];
+   private String B_post_id[];
+  //private String keymoneyAmount[];
 
 
 
@@ -85,8 +85,9 @@ public class AddasBoarderNew extends AppCompatActivity {
                     NIC=new String[jsonArray.length()];
                     telephone=new String[jsonArray.length()];
                     institute=new String[jsonArray.length()];
-                    B_post_id=new String[jsonArray.length()];
-                    keymoneyAmount=new String[jsonArray.length()];
+                   B_post_id=new String[jsonArray.length()];
+                 //  keymoneyAmount=new String[jsonArray.length()];
+
 
 
 
@@ -102,12 +103,14 @@ public class AddasBoarderNew extends AppCompatActivity {
                         telephone[i]=jsonObject.getString("telephone");
                         institute[i]=jsonObject.getString("institute");
                         B_post_id[i]=jsonObject.getString("B_post_id");
-                        keymoneyAmount[i]=jsonObject.getString("keymoneyAmount");
+                    //    keymoneyAmount[i]=jsonObject.getString("keymoneyAmount");
+
 
 
                     }
+                    //,keymoneyAmount
 
-                    myAdapter adapter=new myAdapter(getApplicationContext(), request_id,first_name,gender,NIC,telephone,institute,B_post_id,keymoneyAmount);
+                    myAdapter adapter=new myAdapter(getApplicationContext(), request_id,first_name,gender,NIC,telephone,institute,B_post_id);
 
                     lv.setAdapter(adapter);
 
@@ -163,10 +166,12 @@ public class AddasBoarderNew extends AppCompatActivity {
 
         String telephone[];
         String institute[];
-        String B_post_id[];
-        String keymoneyAmount[];
+       String B_post_id[];
+      // String keymoneyAmount[];
 
-        public myAdapter(Context context,String request_id[],String first_name[],String gender[],String NIC[],String telephone[],String institute[],String B_post_id[],String keymoneyAmount[]) {
+
+        ///,String B_post_id[],String keymoneyAmount[]
+        public myAdapter(Context context,String request_id[],String first_name[],String gender[],String NIC[],String telephone[],String institute[],String B_post_id[]) {
             super(context, R.layout.card_add_as_boarder_list,R.id.request_id,request_id);
             this.context=context;
             this.request_id=request_id;
@@ -176,7 +181,7 @@ public class AddasBoarderNew extends AppCompatActivity {
             this.telephone=telephone;
             this.institute=institute;
             this.B_post_id=B_post_id;
-            this.keymoneyAmount=keymoneyAmount;
+           // this.keymoneyAmount=keymoneyAmount;
         }
 
         @NonNull
@@ -194,7 +199,7 @@ public class AddasBoarderNew extends AppCompatActivity {
             TextView txttelephone=row.findViewById(R.id.telephone);
             TextView txtinstitute=row.findViewById(R.id.institute);
             TextView txtB_post_id=row.findViewById(R.id.post_id);
-            TextView txtkeymoneyAmount=findViewById(R.id.amount);
+          //  TextView txtkeymoneyAmount=findViewById(R.id.amount);
 
             txtrequest_id.setText(request_id[position]);
             txtfirst_name.setText(first_name[position]);
@@ -202,9 +207,8 @@ public class AddasBoarderNew extends AppCompatActivity {
             txtNIC.setText(NIC[position]);
             txttelephone.setText(telephone[position]);
             txtinstitute.setText(institute[position]);
-            txtB_post_id.setText(B_post_id[position]);
-            txtkeymoneyAmount.setText(keymoneyAmount[position]);
-
+             txtB_post_id.setText(B_post_id[position]);
+          //  txtkeymoneyAmount.setText(keymoneyAmount[position]);
            return row;
         }
 

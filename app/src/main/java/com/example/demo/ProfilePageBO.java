@@ -1,9 +1,11 @@
 package com.example.demo;
 
-        import android.content.Context;
-        import android.content.DialogInterface;
-        import android.content.Intent;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,21 +15,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-        import android.widget.Button;
-        import android.widget.ListView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-        import androidx.appcompat.app.AlertDialog;
-        import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -45,7 +49,7 @@ public class ProfilePageBO extends AppCompatActivity {
     private static String last_name[];
     private static String address[];
     private static String NIC[];
- //   private static String profile[];
+   private static String profile[];
 
     String intentEmail,intentfirst_name,intentlast_name,intentnic,intent_address;
     Button Btneditprofile;
@@ -143,7 +147,7 @@ public class ProfilePageBO extends AppCompatActivity {
                     last_name= new String[ja.length()];
                     address = new String[ja.length()];
                     NIC = new String[ja.length()];
-                    //profile = new String[ja.length()];
+                    profile = new String[ja.length()];
 
                     for (int i = 0; i < ja.length(); i++) {
                         jo = ja.getJSONObject(i);
@@ -152,10 +156,10 @@ public class ProfilePageBO extends AppCompatActivity {
                         last_name[i] = jo.getString("last_name");;
                         address[i] = jo.getString("address");
                         NIC[i] = jo.getString("NIC");
-                       // profile[i] ="http://10.0.2.2/Android/files/" + jo.getString("image");;
+                        profile[i] ="http://10.0.2.2/Android/files/" + jo.getString("profileimage");;
                     }
 
-                    myadapter adptr = new myadapter(getApplicationContext(),email,first_name, last_name,address,NIC);
+                    myadapter adptr = new myadapter(getApplicationContext(),email,first_name, last_name,address,NIC,profile);
                     lv.setAdapter(adptr);
 
                 } catch (Exception ex) {
@@ -215,9 +219,9 @@ public class ProfilePageBO extends AppCompatActivity {
         String last_name[];
         String address[];
         String NIC[];
-      //  String profile[];
+        String profile[];
 
-        myadapter(Context c,String email[],String first_name[], String last_name[], String address[],String NIC[])
+        myadapter(Context c,String email[],String first_name[], String last_name[], String address[],String NIC[],String profile[])
         {
             super(c,R.layout.row_profile_bofs,R.id.email,email);
             context=c;
@@ -226,7 +230,7 @@ public class ProfilePageBO extends AppCompatActivity {
             this.last_name=last_name;
             this.address=address;
             this.NIC=NIC;
-          //  this.profile=profile;
+            this.profile=profile;
 
 
 
@@ -246,11 +250,11 @@ public class ProfilePageBO extends AppCompatActivity {
 
             TextView txtaddress=row.findViewById(R.id.address);
             TextView txtnic=row.findViewById(R.id.nic);
-           // ImageView imgprofile=row.findViewById(R.id.profile);
+           ImageView imgprofile=row.findViewById(R.id.profile);
 
             TextView txttitlt=row.findViewById(R.id.title);
 
-            //String url=profile[position];
+            String url=profile[position];
             txtname.setText(first_name[position]+" "+last_name[position]);
             txttitlt.setText(first_name[position]+" "+last_name[position]);
             txtemail.setText(email[position]);
@@ -267,7 +271,7 @@ public class ProfilePageBO extends AppCompatActivity {
 
 
 
-           /* class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
+            class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
                 private String url;
                 private ImageView imageView;
 
@@ -294,9 +298,9 @@ public class ProfilePageBO extends AppCompatActivity {
                     super.onPostExecute(result);
                     imageView.setImageBitmap(result);
                 }
-            }*/
-          //  ImageLoadTask obj=new ImageLoadTask(url,imgprofile);
-         //   obj.execute();
+            }
+            ImageLoadTask obj=new ImageLoadTask(url,imgprofile);
+            obj.execute();
 
             return row;
         }

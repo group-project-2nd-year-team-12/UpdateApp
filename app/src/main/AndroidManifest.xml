@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddasBoarderNew"
-            android:parentActivityName=".MyRequestsBO"/>
+        <activity android:name=".SearchDetails"></activity>
+        <activity android:name=".SearchViewFood" />
+        <activity
+            android:name=".AddasBoarderNew"
+            android:parentActivityName=".MyRequestsBO" />
         <activity android:name=".CancelReqBO" />
         <activity android:name=".ChatApp" />
         <activity android:name=".AddasBoarderBO" />
@@ -29,8 +32,9 @@
             android:name=".MyPostsFSupplier"
             android:parentActivityName=".HomeFSupplier" />
         <activity android:name=".SearchPractise" />
-        <activity android:name=".ProfileEditB"
-            android:parentActivityName=".ProfilePageB"/>
+        <activity
+            android:name=".ProfileEditB"
+            android:parentActivityName=".ProfilePageB" />
         <activity
             android:name=".ProfilePageFS"
             android:parentActivityName=".HomeFSupplier" />

@@ -1,10 +1,5 @@
 package com.example.demo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,11 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,8 +35,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 import es.dmoral.toasty.Toasty;
 
@@ -57,7 +54,7 @@ public class profile extends AppCompatActivity  {
     private static String first[];
     private static String last[];
     private  static String institute[];
-    private static String telephone[];
+   // private static String telephone[];
     private static String image[];
     String email_user;
   //  ArrayList<String>holder=new ArrayList<>();
@@ -109,7 +106,7 @@ public class profile extends AppCompatActivity  {
                         last[i]=jsonObject.getString("last_name");
                         institute[i]=jsonObject.getString("institute");
                         //telephone[i]=jsonObject.getString("telephone");
-                        image[i]="http://10.0.2.2/Android/files/" + jsonObject.getString("image");
+                        image[i]="http://10.0.2.2/Android/files/" + jsonObject.getString("profileimage");
 
                     }
                     profile.myadapter adptr = new profile.myadapter(getApplicationContext(),email, first, last,institute,image);

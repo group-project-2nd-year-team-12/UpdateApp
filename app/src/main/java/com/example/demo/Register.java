@@ -23,6 +23,8 @@ public class Register extends AppCompatActivity {
         txtid=findViewById(R.id.txt2);
 
         Intent intent=getIntent();
+
+
         txttype.setText(intent.getStringExtra("type"));
         txtid.setText(intent.getStringExtra("Request_id"));
 

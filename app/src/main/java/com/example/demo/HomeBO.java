@@ -129,15 +129,15 @@ public class HomeBO extends AppCompatActivity implements View.OnClickListener {
                 i=new Intent(this,ProfilePageB.class);
                 startActivity(i);
                 break;
-            case R.id.c4:
-                SharedPreferences sharedPreferences2=getSharedPreferences("details",MODE_PRIVATE);
-                String username1=sharedPreferences2.getString("username","No name");
-                Toast.makeText(this,"Logout Successfully"+username1,Toast.LENGTH_LONG).show();
-
-                i=new Intent(this,ChatApp.class);
-                startActivity(i);
-
-                break;
+//            case R.id.c4:
+//                SharedPreferences sharedPreferences2=getSharedPreferences("details",MODE_PRIVATE);
+//                String username1=sharedPreferences2.getString("username","No name");
+//                Toast.makeText(this,"Logout Successfully"+username1,Toast.LENGTH_LONG).show();
+//
+//                i=new Intent(this,ChatApp.class);
+//                startActivity(i);
+//
+//                break;
 
 
 

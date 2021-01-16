@@ -170,7 +170,7 @@ public class MyBoarders extends AppCompatActivity {
                         emailBoarder[i]=jo.getString("email");
                         first_name[i] = jo.getString("first_name");
                         last_name[i] = jo.getString("last_name");;
-                        profile[i] ="http://10.0.2.2/Android/files/" + jo.getString("image");;
+                        profile[i] ="http://10.0.2.2/Android/files/" + jo.getString("profileimage");;
                         institute[i]=jo.getString("institute");
                         gender[i]=jo.getString("gender");
                         telephone[i]=jo.getString("telephone");

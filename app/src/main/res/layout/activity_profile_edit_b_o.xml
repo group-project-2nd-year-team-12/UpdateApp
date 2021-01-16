@@ -11,6 +11,8 @@ android:orientation="vertical">
     android:layout_width="match_parent"
     android:id="@+id/toolbar"
     android:layout_height="wrap_content"
+    app:title="Edit Profile"
+    app:titleMarginStart="80dp"
 
     android:background="#000080"
     android:elevation="4dp"
@@ -21,61 +23,119 @@ android:orientation="vertical">
 </androidx.appcompat.widget.Toolbar>
 
 <LinearLayout
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="100dp"
     >
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ishan"
-        android:id="@+id/first_name"/>
-    <EditText
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp">
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="First Name:"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+        <EditText
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="ishan"
+            android:textSize="20sp"
+
+            android:id="@+id/first_name"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ishan"
-        android:id="@+id/last_name"/>
-    <EditText
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:text="Last Name:"/>
+
+        <EditText
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="ishan"
+            android:textSize="20sp"
+            android:id="@+id/last_name"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ishan"
-        android:id="@+id/nic"/>
-    <EditText
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:text="Institute:"/>
+
+        <EditText
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="University of Colombo"
+            android:textSize="20sp"
+            android:id="@+id/address"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ishan"
-        android:id="@+id/address"/>
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:text="NIC:"/>
+
+        <EditText
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="ishan"
+            android:textSize="20sp"
+            android:id="@+id/nic"/>
+
+    </LinearLayout>
+
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit"
         android:id="@+id/update"
-        android:onClick="onUpdateBO"/>
+        android:layout_width="250dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="70dp"
+        android:background="@drawable/editbutton_round"
+        android:onClick="onUpdateBO"
+        android:textSize="22sp"
+        android:text="Update"
+        android:textStyle="bold"
+        android:textColor="#fff" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/email1"
-        android:text="ishan"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/name1"
-        android:text="ishan"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/institute1"
-        android:text="ishan"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/telephone1"
-        android:text="ishan"/>
 </LinearLayout>
 
 

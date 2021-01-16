@@ -20,8 +20,10 @@
         <activity android:name=".CancelReqBO" />
         <activity android:name=".ChatApp" />
         <activity android:name=".AddasBoarderBO" />
-        <activity android:name=".ProfileEditFS" />
-        <activity android:name=".ProfileEditBO" />
+        <activity android:name=".ProfileEditFS"
+            android:parentActivityName=".ProfilePageFS"/>
+        <activity android:name=".ProfileEditBO"
+            android:parentActivityName=".ProfilePageBO"/>
         <activity
             android:name=".NewRequestBO"
             android:parentActivityName=".MyRequestsBO" />

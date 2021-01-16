@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -32,7 +36,7 @@ public class AddasBoarderNew extends AppCompatActivity {
     private static final String apiurl="http://10.0.2.2/Android/files/AddasBSelect.php";
 
     ListView lv;
-    String emailShared;
+    String emailShared,Request_id;
 
     private String request_id[];
     private String first_name[];
@@ -42,9 +46,9 @@ public class AddasBoarderNew extends AppCompatActivity {
     private String institute[];
    private String B_post_id[];
    private  String 	keymoneyAmount[];
-   private String payment_method[];
+   //private String payment_method[];
 
-   private String payment_date[];
+//   private String payment_date[];
 
 
 
@@ -93,9 +97,9 @@ public class AddasBoarderNew extends AppCompatActivity {
                     keymoneyAmount=new String[jsonArray.length()];
 
 
-                    payment_method=new String[jsonArray.length()];
+                    //payment_method=new String[jsonArray.length()];
 
-                    payment_date=new String[jsonArray.length()];
+                  //  payment_date=new String[jsonArray.length()];
 
 
 
@@ -113,16 +117,16 @@ public class AddasBoarderNew extends AppCompatActivity {
                         B_post_id[i]=jsonObject.getString("B_post_id");
                         keymoneyAmount[i]=jsonObject.getString("keymoneyAmount");
 
-                        payment_method[i]=jsonObject.getString("payment_method");
+                     //   payment_method[i]=jsonObject.getString("payment_method");
 
-                        payment_date[i]=jsonObject.getString("payment_date");
+                      //  payment_date[i]=jsonObject.getString("payment_date");
 
 
 
                     }
 
 
-                    myAdapter adapter=new myAdapter(getApplicationContext(), request_id,first_name,gender,NIC,telephone,institute,B_post_id,keymoneyAmount,payment_method,payment_date);
+                    myAdapter adapter=new myAdapter(getApplicationContext(), request_id,first_name,gender,NIC,telephone,institute,B_post_id,keymoneyAmount);
 
                     lv.setAdapter(adapter);
 
@@ -180,13 +184,13 @@ public class AddasBoarderNew extends AppCompatActivity {
         String institute[];
        String B_post_id[];
        String keymoneyAmount[];
-       String payment_method[];
+   //    String payment_method[];
 
-      String payment_date[];
+    //  String payment_date[];
 
 
 
-        public myAdapter(Context context,String request_id[],String first_name[],String gender[],String NIC[],String telephone[],String institute[],String B_post_id[],String keymoneyAmount[],String payment_method[],String payment_date[]) {
+        public myAdapter(Context context,String request_id[],String first_name[],String gender[],String NIC[],String telephone[],String institute[],String B_post_id[],String keymoneyAmount[]) {
             super(context, R.layout.card_add_as_boarder_list,R.id.request_id,request_id);
             this.context=context;
             this.request_id=request_id;
@@ -197,9 +201,9 @@ public class AddasBoarderNew extends AppCompatActivity {
             this.institute=institute;
             this.B_post_id=B_post_id;
             this.keymoneyAmount=keymoneyAmount;
-            this.payment_method=payment_method;
+        //    this.payment_method=payment_method;
 
-            this.payment_date=payment_date;
+           // this.payment_date=payment_date;
         }
 
         @NonNull
@@ -218,10 +222,36 @@ public class AddasBoarderNew extends AppCompatActivity {
             TextView txtinstitute=row.findViewById(R.id.institute);
             TextView txtB_post_id=row.findViewById(R.id.post_id);
             TextView txtkeymoneyAmount=row.findViewById(R.id.keymoneyAmount);
-           TextView txtpayment_date=row.findViewById(R.id.payment_date);
+            Button btnAdd=row.findViewById(R.id.addboarder);
+          // TextView txtpayment_date=row.findViewById(R.id.payment_date);
 
-           TextView txtpayment_method=row.findViewById(R.id.payment_method);
+            Request_id=txtrequest_id.getText().toString();
+          // TextView txtpayment_method=row.findViewById(R.id.payment_method);
 
+            btnAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    AlertDialog.Builder alert=new AlertDialog.Builder(AddasBoarderNew.this);
+                    alert.setMessage("Are you sure, Add boarder?");
+                    alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent=new Intent(AddasBoarderNew.this,AddBTem.class);
+                            intent.putExtra("request_id",Request_id);
+                            startActivity(intent);
+                        }
+                    }).setNegativeButton("Cancel",null).setCancelable(false);
+
+                    AlertDialog alertDialog=alert.create();
+                    alertDialog.show();
+
+
+
+
+
+                }
+            });
 
 
             txtrequest_id.setText(request_id[position]);
@@ -233,10 +263,15 @@ public class AddasBoarderNew extends AppCompatActivity {
              txtB_post_id.setText(B_post_id[position]);
 
              txtkeymoneyAmount.setText(keymoneyAmount[position]);
-            txtpayment_method.setText(payment_method[position]);
-             txtpayment_date.setText(payment_date[position]);
+            //txtpayment_method.setText(payment_method[position]);
+            // txtpayment_date.setText(payment_date[position]);
 
            return row;
+
+
+
+
+
         }
 
     }

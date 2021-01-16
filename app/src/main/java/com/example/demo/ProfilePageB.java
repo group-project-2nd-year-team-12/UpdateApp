@@ -172,7 +172,7 @@ public class ProfilePageB extends AppCompatActivity {
                         last_name[i] = jo.getString("last_name");;
                         institute[i] = jo.getString("institute");
                         telephone[i] = jo.getString("telephone");
-                        profile[i] ="http://10.0.2.2/Android/files/" + jo.getString("image");;
+                        profile[i] ="http://10.0.2.2/Android/files/" + jo.getString("profileimage");;
                     }
 
                     myadapter adptr = new myadapter(getApplicationContext(),email,first_name, last_name, institute,telephone,profile);

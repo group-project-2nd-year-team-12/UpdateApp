@@ -225,7 +225,7 @@ public class AddasBoarderNew extends AppCompatActivity {
             Button btnAdd=row.findViewById(R.id.addboarder);
           // TextView txtpayment_date=row.findViewById(R.id.payment_date);
 
-            Request_id=txtrequest_id.getText().toString();
+            Request_id=request_id[position];
           // TextView txtpayment_method=row.findViewById(R.id.payment_method);
 
             btnAdd.setOnClickListener(new View.OnClickListener() {

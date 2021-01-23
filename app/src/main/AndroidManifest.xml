@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddBTem"></activity>
+        <activity android:name=".BottomToolbar"></activity>
+        <activity android:name=".AddBTem" />
         <activity android:name=".SearchDetails" />
         <activity android:name=".SearchViewFood" />
         <activity

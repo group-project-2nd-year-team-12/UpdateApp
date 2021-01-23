@@ -2,6 +2,7 @@ package com.example.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,16 +13,20 @@ import es.dmoral.toasty.Toasty;
 
 public class AddBTem extends AppCompatActivity {
 
-
+TextView t1;
     String request_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_b_tem);
-
+t1=findViewById(R.id.t2);
         Intent intent=getIntent();
-        request_id=intent.getStringExtra("request_id");
+
+//        request_id=intent.getStringExtra("request_id");
+//
+        t1.setText(intent.getStringExtra("request_id"));
         String type="UpdateAddasB";
+       request_id=intent.getStringExtra("request_id");
         BackgroundAddBByBO backgroundAddBByBO=new BackgroundAddBByBO(this);
         try {
             String result=backgroundAddBByBO.execute(type,request_id).get();
@@ -35,8 +40,6 @@ public class AddBTem extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
 
 
     }

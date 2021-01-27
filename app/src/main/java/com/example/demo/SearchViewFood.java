@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SearchViewFood extends AppCompatActivity {
-    private static final String base_url="http://10.0.2.2";
-    private static final String full_url="Android/files/post.php";
-
+//    private static final String base_url="http://10.0.2.2";
+//    private static final String full_url="Android/files/post.php";
+//
 //    class Spacecraft{
 //        @SerializedName("B_post_id")
 //        private int B_post_id;
@@ -84,8 +84,8 @@ public class SearchViewFood extends AppCompatActivity {
 //
 //    interface MyAPIService{
 //
-////        @GET("/Android/files")
-////        Call<List<Spacecraft>> getSpacecraft;
+//        @GET("/Android/files")
+//        Call<List<Spacecraft>> getSpacecraft;
 //
 //    }
 //
@@ -102,7 +102,7 @@ public class SearchViewFood extends AppCompatActivity {
 //        }
 //    }
 //
-//    class FilterHelper extends Filter{
+//    class FilterHelper extends Filter {
 //
 //        @Override
 //        protected FilterResults performFiltering(CharSequence constraint) {

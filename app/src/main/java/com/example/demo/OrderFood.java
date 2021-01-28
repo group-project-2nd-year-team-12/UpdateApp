@@ -1,8 +1,8 @@
 package com.example.demo;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderFood extends AppCompatActivity {
+public class OrderFood extends AppCompatActivity  {
 
     private static final String PRODUCT_URL="http://10.0.2.2/Android/files/food.php";
 
@@ -113,21 +113,47 @@ public class OrderFood extends AppCompatActivity {
                             for (int i=0;i<food.length();i++){
 
                                 JSONObject jsonObject=food.getJSONObject(i);
+
+                                String F_post_id=jsonObject.getString("F_post_id");
                                 String title=jsonObject.getString("ad_title");
                                 String  description=jsonObject.getString("description");
                                 String address=jsonObject.getString("address");
                                 String rating=jsonObject.getString("rating");
                                 String image="http://10.0.2.2/Android/files/"+jsonObject.getString("image");
 
-                                FoodName foodName=new FoodName(title,description,address,rating,image);
+                                FoodName foodName=new FoodName(F_post_id,title,description,address,rating,image);
                                 foodNameList.add(foodName);
+
+
                             }
+
                             adapter=new FoodNameAdapter(OrderFood.this,foodNameList);
-                            recyclerView.setAdapter(adapter);
-                            recyclerView.setOnClickListener(new View.OnClickListener() {
+                         recyclerView.setAdapter(adapter);
+
+
+                            adapter.setOnItemClickListener(new FoodNameAdapter.OnItemClickListener(){
                                 @Override
-                                public void onClick(View v) {
+                                public void onItemClick(int position) {
+                                    //productList.get(position)
+                                    Intent intent=new Intent(OrderFood.this,InsideFoodPost.class);
+                                    FoodName item=foodNameList.get(position);
+                                    intent.putExtra("F_post_id",item.getF_post_id());
+                                    intent.putExtra("image",item.getImage());
+                                    startActivity(intent);
                                     Toast.makeText(OrderFood.this,"One item selected",Toast.LENGTH_LONG).show();
+                                }
+
+
+                                @Override
+                                public void onDelete(int position) {
+
+                                    String type="AcceptReqBO";
+
+                                    // Intent intent=new Intent(getApplicationContext(),HomeBOwner.class);
+                                    //   startActivity(intent);
+
+
+                                    Toast.makeText(OrderFood.this,"up  "+position,Toast.LENGTH_LONG).show();
                                 }
                             });
 

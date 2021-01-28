@@ -19,7 +19,7 @@ import es.dmoral.toasty.Toasty;
 
 public class HomeFSupplier extends AppCompatActivity implements View.OnClickListener {
 
-    CardView c1,c2,c3,c4,c5;
+    CardView c1,c2,c3,c4,c5,c6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
         c3=findViewById(R.id.c3);
         c4=findViewById(R.id.c4);
         c5=findViewById(R.id.c5);
+        c6=findViewById(R.id.c6);
 
         ///set the toolbar previous icon
         Toolbar toolbar=findViewById(R.id.toolbar);
@@ -40,6 +41,7 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
     c3.setOnClickListener(this);
     c4.setOnClickListener(this);
     c5.setOnClickListener(this);
+    c6.setOnClickListener(this);
 
 
     }
@@ -49,7 +51,7 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.home_menu,menu);
+        inflater.inflate(R.menu.home_fs,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -63,10 +65,10 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
         switch (item.getItemId())
         {
             case R.id.item1:
-//                Intent intent=new Intent(this,HomeBOwner.class);
-//                startActivity(intent);
-//                Toasty.info(this,"Home page is again", Toast.LENGTH_LONG).show();
-                //Toast.makeText(this,"Direct Home Page again",Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(this,ChangeStatesFS.class);
+                startActivity(intent);
+                Toasty.info(this,"You can set the unavailable time", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.item2:
 
@@ -106,6 +108,11 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.c5:
                 i=new Intent(getApplicationContext(),ProfilePageFS.class);
+                startActivity(i);
+                break;
+
+            case R.id.c6:
+                i=new Intent(getApplicationContext(),SettingFS.class);
                 startActivity(i);
                 break;
 

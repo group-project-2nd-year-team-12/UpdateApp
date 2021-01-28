@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".InsideFoodPost"></activity>
+        <activity android:name=".ChangeStatesFS"
+            android:parentActivityName=".HomeFSupplier"/>
+        <activity
+            android:name=".SettingFS"
+            android:parentActivityName=".HomeFSupplier" />
+        <activity android:name=".InsideFoodPost" />
         <activity android:name=".BottomToolbar" />
         <activity android:name=".AddBTem" />
         <activity android:name=".SearchDetails" />

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BottomToolbar"></activity>
+        <activity android:name=".InsideFoodPost"></activity>
+        <activity android:name=".BottomToolbar" />
         <activity android:name=".AddBTem" />
         <activity android:name=".SearchDetails" />
         <activity android:name=".SearchViewFood" />
@@ -69,8 +70,9 @@
         <activity android:name=".my_post_BO" />
         <activity android:name=".MyAdsBOwner" />
         <activity android:name=".AcceptedOrder" />
-        <activity android:name=".OrderFood"
-            android:parentActivityName=".FoodPage"/>
+        <activity
+            android:name=".OrderFood"
+            android:parentActivityName=".FoodPage" />
         <activity android:name=".PayHistory" />
         <activity android:name=".PayRent" />
         <activity android:name=".ChatPage" />

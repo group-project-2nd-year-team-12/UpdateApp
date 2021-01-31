@@ -12,8 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChangeStatesFS"
+        <activity android:name=".NewOrders"
             android:parentActivityName=".HomeFSupplier"/>
+        <activity android:name=".LongTermOrder"
+            android:parentActivityName=".HomeFSupplier"/>
+        <activity
+            android:name=".ChangeStatesFS"
+            android:parentActivityName=".HomeFSupplier" />
         <activity
             android:name=".SettingFS"
             android:parentActivityName=".HomeFSupplier" />

@@ -33,14 +33,15 @@ public class ChangeStatesFS extends AppCompatActivity {
 
        radioGroup=findViewById(R.id.radiogroup);
 
+        int radioId=radioGroup.getCheckedRadioButtonId();
+        radioButton=findViewById(radioId);
 
 
 
     }
 
     public void checkButton(View view) throws ExecutionException, InterruptedException {
-        int radioId=radioGroup.getCheckedRadioButtonId();
-        radioButton=findViewById(radioId);
+
 
 
         String type="UpdateAvailable";
@@ -72,12 +73,19 @@ public class ChangeStatesFS extends AppCompatActivity {
 
     }
 
-    public void OnUnavailable(View view) {
-        int radioId=radioGroup.getCheckedRadioButtonId();
-        radioButton=findViewById(radioId);
-        Toast.makeText(ChangeStatesFS.this,"Un avskkc"+emailShare,Toast.LENGTH_LONG).show();
+    public void OnUnavailable(View view) throws ExecutionException, InterruptedException {
+
+        //Toast.makeText(ChangeStatesFS.this,"Un avskkc"+emailShare,Toast.LENGTH_LONG).show();
 
         //UpdateUnAvailable
+
+
+        String type="UpdateUnAvailable";
+        BackgroundSetStates backgroundSetStates=new BackgroundSetStates(this);
+        String result=backgroundSetStates.execute(type,emailShare).get();
+        if (result.equals("Successfully")){
+            Toast.makeText(ChangeStatesFS.this,"You are now Unavailable state",Toast.LENGTH_LONG).show();
+        }
 
 //        AlertDialog.Builder alert=new AlertDialog.Builder(ChangeStatesFS.this);
 //        alert.setMessage("Are you in the Unavailable time?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {

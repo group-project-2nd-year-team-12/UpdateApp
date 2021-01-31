@@ -41,9 +41,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:id="@+id/radioId1"
                 android:text="Available"
                 android:textSize="20dp"
 
+                android:checked="true"
                 android:onClick="checkButton"
                 />
 
@@ -51,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:id="@+id/radioId2"
                 android:text="Unavailable"
                 android:textSize="20dp"
                 android:onClick="OnUnavailable"

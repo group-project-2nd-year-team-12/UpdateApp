@@ -99,7 +99,7 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
         Intent i;
         switch (v.getId()){
             case R.id.c1:
-                i=new Intent(getApplicationContext(),ForgetPassword.class);
+                i=new Intent(getApplicationContext(),NewOrders.class);
                 startActivity(i);
                 break;
             case R.id.c4:

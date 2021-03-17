@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,10 +35,11 @@ public class NewOrders extends AppCompatActivity {
     String  emailShared;
     private static final String apiurl="http://10.0.2.2/Android/files/selectSFoodOrder.php";
     ListView lv;
+     String Oid;
 
-    ListView lv1;
 
- //   private static String emailBoarder[];
+
+
 
     private static String order_id[];
     private static String expireTime[];
@@ -46,10 +48,11 @@ public class NewOrders extends AppCompatActivity {
     private static String phone[];
     private static String total[];
     private static String method[];
-    private static String 	item_name[];
-    private static String 	quantity[];
 
 
+
+
+    Button btnAccept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +90,9 @@ public class NewOrders extends AppCompatActivity {
 
        // selectSFoodOrder.php
         lv=(ListView)findViewById(R.id.listfood);
-      //  lv1=findViewById(R.id.listitems);
+
+
+
 
         fetch_data_into_array(lv);
 
@@ -116,8 +121,7 @@ public class NewOrders extends AppCompatActivity {
                     total = new String[ja.length()];
                     method = new String[ja.length()];
 
-                    item_name = new String[ja.length()];
-                    quantity = new String[ja.length()];
+
 
 
 
@@ -129,19 +133,17 @@ public class NewOrders extends AppCompatActivity {
                         expireTime[i]=jo.getString("expireTime");
                         first_name[i] = jo.getString("first_name");
                         address[i] = jo.getString("address");;
-
                         phone[i]=jo.getString("phone");
                         total[i]=jo.getString("total");
                         method[i]=jo.getString("method");
-                        quantity[i]=jo.getString("quantity");
-                        item_name[i]=jo.getString("item_name");
+
 
 
 
                     }
 
-                    myadapter adptr = new myadapter(getApplicationContext(),order_id,expireTime, first_name, address,phone,total,method,item_name,quantity);
-                  //  myadapter1 adptr1 = new myadapter1(getApplicationContext(),expireTime, first_name, address,phone,total,method);
+                    myadapter adptr = new myadapter(getApplicationContext(),order_id,expireTime, first_name, address,phone,total,method);
+
                     lv.setAdapter(adptr);
 
                 } catch (Exception ex) {
@@ -192,12 +194,11 @@ public class NewOrders extends AppCompatActivity {
        String phone[];
        String total[];
        String method[];
-       String item_name[];
-       String quantity[];
 
-        myadapter(Context c, String order_id[],String expireTime[], String first_name[], String address[], String phone[],String total[],String method[],String item_name[],String quantity[])
+
+        myadapter(Context c, String order_id[],String expireTime[], String first_name[], String address[], String phone[],String total[],String method[])
         {
-            super(c,R.layout.card_short_term_order,R.id.phone,phone);
+            super(c,R.layout.card_short_term_order,R.id.phone,order_id);
             context=c;
             this.order_id=order_id;
             this.expireTime=expireTime;
@@ -206,8 +207,7 @@ public class NewOrders extends AppCompatActivity {
             this.phone=phone;
             this.total=total;
             this.method=method;
-            this.item_name=item_name;
-            this.quantity=quantity;
+
 
 
 
@@ -215,15 +215,14 @@ public class NewOrders extends AppCompatActivity {
         }
         @NonNull
         @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
+        public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent)
         {
             LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row=inflater.inflate(R.layout.card_short_term_order,parent,false);
 
-            //ImageView img=row.findViewById(R.id.img1);
 
 
-            TextView txtorder=row.findViewById(R.id.ishan);
+
 
             TextView txtexpireTime=row.findViewById(R.id.expireTime);
             TextView txtfirst_name=row.findViewById(R.id.first_name);
@@ -231,22 +230,44 @@ public class NewOrders extends AppCompatActivity {
             TextView txtphone=row.findViewById(R.id.phone);
             TextView txtftotal=row.findViewById(R.id.total);
             TextView txtmethod=row.findViewById(R.id.method);
+            TextView txtorderId=row.findViewById(R.id.order_id);
+             btnAccept=row.findViewById(R.id.viewbtn);
 
-            TextView txtitem_name=row.findViewById(R.id.n1);
-            TextView txtquantity=row.findViewById(R.id.q1);
 
-            txtitem_name.setText(item_name[position]+" "+quantity[position]);
+
+
+            txtorderId.setText(order_id[position]);
             txtexpireTime.setText(expireTime[position]);
 
 
-            txtorder.setText(order_id[position]);
+
             txtexpireTime.setText(expireTime[position]);
             txtfirst_name.setText(first_name[position]);
             txtfaddress.setText(address[position]);
             txtphone.setText(phone[position]);
             txtftotal.setText(total[position]);
             txtmethod.setText(method[position]);
+            Oid=order_id[position];
 
+//            textView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    Intent intent=new Intent(NewOrders.this,viewOrdersShort.class);
+//                    intent.putExtra("order_id",Oid);
+//                    startActivity(intent);
+//
+//                }
+//            });
+            btnAccept.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(NewOrders.this,viewOrdersShort.class);
+                    intent.putExtra("order_id",order_id[position]);
+                   // Toast.makeText(getApplicationContext(),order_id[position], Toast.LENGTH_LONG).show();
+                    startActivity(intent);
+                }
+            });
 
 
 
@@ -262,75 +283,6 @@ public class NewOrders extends AppCompatActivity {
     }
 
 
-//    class myadapter1 extends ArrayAdapter<String>
-//    {
-//        Context context;
-//
-//        String expireTime[];
-//        String first_name[];
-//        String address[];
-//        String phone[];
-//        String total[];
-//        String method[];
-//
-//        myadapter1(Context c,String expireTime[], String first_name[], String address[], String phone[],String total[],String method[])
-//        {
-//            super(c,R.layout.card_short_term_order,R.id.phone,phone);
-//            context=c;
-//            this.expireTime=expireTime;
-//            this.first_name=first_name;
-//            this.address=address;
-//            this.phone=phone;
-//            this.total=total;
-//            this.method=method;
-//
-//
-//
-//
-//        }
-//        @NonNull
-//        @Override
-//        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
-//        {
-//            LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            View row=inflater.inflate(R.layout.card_short_term_order,parent,false);
-//
-//            //ImageView img=row.findViewById(R.id.img1);
-//
-//
-//
-//            TextView txtexpireTime=row.findViewById(R.id.expireTime);
-//            TextView txtfirst_name=row.findViewById(R.id.first_name);
-//            TextView txtfaddress=row.findViewById(R.id.address);
-//            TextView txtphone=row.findViewById(R.id.phone);
-//            TextView txtftotal=row.findViewById(R.id.total);
-//            TextView txtmethod=row.findViewById(R.id.method);
-//
-//
-//            txtexpireTime.setText(expireTime[position]);
-//
-//
-//            txtexpireTime.setText(expireTime[position]);
-//            txtfirst_name.setText(expireTime[position]);
-//            txtfaddress.setText(expireTime[position]);
-//            txtphone.setText(expireTime[position]);
-//            txtftotal.setText(expireTime[position]);
-//            txtmethod.setText(expireTime[position]);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//            return row;
-//        }
-//    }
-//
 
 
 

@@ -80,6 +80,7 @@ public class MyBoarders extends AppCompatActivity {
                 intent.putExtra("gender",gender[position]);
                 intent.putExtra("telephone",telephone[position]);
 
+
                 startActivity(intent);
 
             }

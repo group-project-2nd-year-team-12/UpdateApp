@@ -13,7 +13,6 @@ android:background="@drawable/gradient3"
     android:orientation="vertical">
     <include layout="@layout/toolbar"
         android:id="@+id/include"/>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
@@ -29,7 +28,7 @@ android:background="@drawable/gradient3"
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/th1"
+            android:src="@drawable/covera"
 
             android:id="@+id/profile"/>
 
@@ -43,10 +42,11 @@ android:background="@drawable/gradient3"
 
 
 
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="20dp"
         android:rowCount="2"
         android:columnCount="2"
         android:layout_marginRight="10dp"
@@ -71,7 +71,8 @@ android:background="@drawable/gradient3"
                 android:src="@drawable/boarders"
                 android:layout_gravity="center"
                 android:padding="20dp"
-                android:id="@+id/img1"/>
+                android:id="@+id/img1"
+                android:adjustViewBounds="true"/>
 
             <TextView
                 android:layout_width="wrap_content"

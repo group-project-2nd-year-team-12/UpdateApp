@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NewOrders"
-            android:parentActivityName=".HomeFSupplier"/>
-        <activity android:name=".LongTermOrder"
-            android:parentActivityName=".HomeFSupplier"/>
+        <activity android:name=".viewOrdersShort"
+            android:parentActivityName=".NewOrders"/>
+        <activity
+            android:name=".NewOrders"
+            android:parentActivityName=".HomeFSupplier" />
+        <activity
+            android:name=".LongTermOrder"
+            android:parentActivityName=".HomeFSupplier" />
         <activity
             android:name=".ChangeStatesFS"
             android:parentActivityName=".HomeFSupplier" />

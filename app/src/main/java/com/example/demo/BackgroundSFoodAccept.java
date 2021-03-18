@@ -29,6 +29,7 @@ public class BackgroundSFoodAccept extends AsyncTask<String,Void,String> {
 
         String type=strings[0];
         String update_url="http://10.0.2.2/Android/files/updateSFoodAccept.php";
+        String update_url_card="http://10.0.2.2/Android/files/updateSFoodAcceptCard.php";
         String cancel_url="http://10.0.2.2/Android/files/updateSFoodCancel.php";
         if (type.equals("updateSFoodAccept")){
 
@@ -79,6 +80,49 @@ public class BackgroundSFoodAccept extends AsyncTask<String,Void,String> {
                 String order_id=strings[1];
 
                 URL url=new URL(cancel_url);
+
+                HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream=httpURLConnection.getOutputStream();
+
+                BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                String post_data= URLEncoder.encode("order_id","UTF-8")+"="+URLEncoder.encode(order_id,"UTF-8");
+
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                InputStream inputStream=httpURLConnection.getInputStream();
+                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+                while ((line=bufferedReader.readLine())!=null){
+                    result+=line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
+                return result;
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }//updateSFoodAcceptCard
+        else if(type.equals("updateSFoodAcceptCard")){
+            try {
+
+                String order_id=strings[1];
+
+                URL url=new URL(update_url_card);
 
                 HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");

@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".viewOrdersShort"
-            android:parentActivityName=".NewOrders"/>
+        <activity android:name=".OrderCardPay"></activity>
+        <activity android:name=".DeliveredOrder" />
+        <activity
+            android:name=".viewOrdersShort"
+            android:parentActivityName=".NewOrders" />
         <activity
             android:name=".NewOrders"
             android:parentActivityName=".HomeFSupplier" />

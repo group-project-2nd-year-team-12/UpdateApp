@@ -2,6 +2,7 @@ package com.example.demo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -59,6 +60,10 @@ public class NewOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_orders);
 
+        //set the shared preferences
+        SharedPreferences sp=getApplicationContext().getSharedPreferences("details", Context.MODE_PRIVATE);
+        emailShared=sp.getString("username","No name");
+
         //set toolbar
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -88,6 +93,10 @@ public class NewOrders extends AppCompatActivity {
             }
         });
 
+
+
+
+
        // selectSFoodOrder.php
         lv=(ListView)findViewById(R.id.listfood);
 
@@ -100,7 +109,7 @@ public class NewOrders extends AppCompatActivity {
 
     public void fetch_data_into_array(View view)
     {
-      //  String qur="?username="+emailShared;
+        String qur="?username="+emailShared;
 
         class  dbManager extends AsyncTask<String,Void,String>
         {
@@ -130,7 +139,7 @@ public class NewOrders extends AppCompatActivity {
                         jo = ja.getJSONObject(i);
                         order_id[i]=jo.getString("order_id");
 
-                        expireTime[i]=jo.getString("expireTime");
+                        expireTime[i]=jo.getString("time");
                         first_name[i] = jo.getString("first_name");
                         address[i] = jo.getString("address");;
                         phone[i]=jo.getString("phone");
@@ -177,7 +186,7 @@ public class NewOrders extends AppCompatActivity {
 
         }
         dbManager obj=new dbManager();
-        obj.execute(apiurl);
+        obj.execute(apiurl+qur);
 
     }
 
@@ -264,7 +273,8 @@ public class NewOrders extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent=new Intent(NewOrders.this,viewOrdersShort.class);
                     intent.putExtra("order_id",order_id[position]);
-                   // Toast.makeText(getApplicationContext(),order_id[position], Toast.LENGTH_LONG).show();
+                    intent.putExtra("method",method[position]);
+                    Toast.makeText(getApplicationContext(),emailShared, Toast.LENGTH_LONG).show();
                     startActivity(intent);
                 }
             });

@@ -33,7 +33,7 @@ public class viewOrdersShort extends AppCompatActivity {
 
     private static String item_name[];
     private static String quantity[];
-    String order_id;
+    String order_id,method;
 
 
 
@@ -44,6 +44,7 @@ public class viewOrdersShort extends AppCompatActivity {
         TextView textView=findViewById(R.id.ishan);
         Intent intent=getIntent();
         order_id=intent.getStringExtra("order_id");
+        method=intent.getStringExtra("method");
 //        textView.setText(intent.getStringExtra("order_id"));
      //   textView.setText(order_id);
         //viewSOitems.php
@@ -127,15 +128,29 @@ public class viewOrdersShort extends AppCompatActivity {
     }
 
     public void onAccept(View view) throws ExecutionException, InterruptedException {
-        Toast.makeText(viewOrdersShort.this,order_id,Toast.LENGTH_LONG).show();
-        String type="updateSFoodAccept";
-        BackgroundSFoodAccept backgroundSFoodAccept=new BackgroundSFoodAccept(this);
-        String result=backgroundSFoodAccept.execute(type,order_id).get();
-        if (result.equals("Successfully")){
-            Intent intent=new Intent(getApplicationContext(),NewOrders.class);
-            startActivity(intent);
+        Toast.makeText(viewOrdersShort.this,method,Toast.LENGTH_LONG).show();
+        if (method.equals("cash")){
+            String type="updateSFoodAccept";
+            BackgroundSFoodAccept backgroundSFoodAccept=new BackgroundSFoodAccept(this);
+            String result=backgroundSFoodAccept.execute(type,order_id).get();
+            if (result.equals("Successfully")){
+                Intent intent=new Intent(getApplicationContext(),DeliveredOrder.class);
+                startActivity(intent);
+
+            }
+
+        }else if(method.equals("card")){
+            String type="updateSFoodAcceptCard";
+            BackgroundSFoodAccept backgroundSFoodAccept=new BackgroundSFoodAccept(this);
+            String result=backgroundSFoodAccept.execute(type,order_id).get();
+            if (result.equals("Successfully")){
+                Intent intent=new Intent(getApplicationContext(),OrderCardPay.class);
+                startActivity(intent);
+
+            }
 
         }
+
 
 
 

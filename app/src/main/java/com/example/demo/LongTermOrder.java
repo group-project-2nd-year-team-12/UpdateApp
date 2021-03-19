@@ -36,6 +36,7 @@ public class LongTermOrder extends AppCompatActivity {
     ListView lv;
 
     private static String order_id[];
+    private static String restaurant[];
 
     private static String first_name[];
     private static String address[];
@@ -109,6 +110,7 @@ public class LongTermOrder extends AppCompatActivity {
 
 
                     order_id= new String[ja.length()];
+                    restaurant=new String[ja.length()];
                     first_name= new String[ja.length()];
                     address= new String[ja.length()];
                     phone = new String[ja.length()];
@@ -124,6 +126,7 @@ public class LongTermOrder extends AppCompatActivity {
                         jo = ja.getJSONObject(i);
                         order_id[i]=jo.getString("order_id");
 
+                        restaurant[i]=jo.getString("restaurant");
                         first_name[i] = jo.getString("first_name");
                         address[i] = jo.getString("address");;
                         phone[i]=jo.getString("phone");
@@ -135,7 +138,7 @@ public class LongTermOrder extends AppCompatActivity {
 
                     }
 
-                    myadapter adptr = new myadapter(getApplicationContext(),order_id, first_name, address,phone,total,method);
+                    myadapter adptr = new myadapter(getApplicationContext(),order_id,restaurant, first_name, address,phone,total,method);
 
                     lv.setAdapter(adptr);
 
@@ -187,13 +190,15 @@ public class LongTermOrder extends AppCompatActivity {
         String phone[];
         String total[];
         String method[];
+        String restaurant[];
 
 
-        myadapter(Context c, String order_id[],String first_name[], String address[], String phone[],String total[],String method[])
+        myadapter(Context c, String order_id[],String restaurant[],String first_name[], String address[], String phone[],String total[],String method[])
         {
             super(c,R.layout.card_long_term_food,R.id.order_id,order_id);
             context=c;
             this.order_id=order_id;
+            this.restaurant=restaurant;
 
             this.first_name=first_name;
             this.address=address;
@@ -223,6 +228,7 @@ public class LongTermOrder extends AppCompatActivity {
             TextView txtftotal=row.findViewById(R.id.total);
             TextView txtmethod=row.findViewById(R.id.method);
             TextView txtorderId=row.findViewById(R.id.order_id);
+            TextView txtrestaurant=row.findViewById(R.id.restaurant);
 
 
 
@@ -230,6 +236,7 @@ public class LongTermOrder extends AppCompatActivity {
 
             txtorderId.setText(order_id[position]);
 
+            txtrestaurant.setText(restaurant[position]);
             txtfirst_name.setText(first_name[position]);
             txtfaddress.setText(address[position]);
             txtphone.setText(phone[position]);

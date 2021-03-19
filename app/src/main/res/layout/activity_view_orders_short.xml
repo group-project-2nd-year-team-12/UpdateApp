@@ -6,11 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".viewOrdersShort"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ishan"
-        android:id="@+id/ishan"/>
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
@@ -24,6 +20,30 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <soup.neumorphism.NeumorphTextView
+            style="@style/Widget.Neumorph.TextView"
+
+            android:layout_marginLeft="10dp"
+
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#000"
+           />
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#000" />
+    </LinearLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,14 +54,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/food_accept_button"
             android:text="Accept"
             android:id="@+id/btnAccept"
-            android:onClick="onAccept"/>
+            android:onClick="onAccept"
+            android:layout_marginLeft="210dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/food_cancel_button"
+            android:layout_marginLeft="10dp"
             android:text="Cancel"
             android:onClick="Oncancel"
             android:id="@+id/btnCancel"/>

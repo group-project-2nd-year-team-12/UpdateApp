@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="400dp"
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        style="@style/Widget.Neumorph.CardView"
+        android:background="#fff"
+        app:neumorph_shapeType="flat">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-
             android:orientation="vertical">
 
 
-            <TextView
+            <soup.neumorphism.NeumorphTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Order Items:-"
-                android:id="@+id/vieworder"
+                android:text="ORDER INFO"
+                android:layout_gravity="center"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimaryDark"
 
                 />
 
@@ -30,136 +34,203 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                >
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:text="Order Id:-"
+                    android:text="Order Id"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
 
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="view order"
                     android:id="@+id/order_id"
+                    android:textSize="18sp"
+                    android:textColor="#000"
                     />
             </LinearLayout>
-
-
-
-
-
-
-
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:text="Sheduled Time"
+                    android:text="Ordered Time"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:textSize="16sp"
                     android:id="@+id/expireTime"
+                    android:textColor="#000"
                     />
             </LinearLayout>
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Resturent"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/restaurant"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:text="Customer Name"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:textSize="16sp"
                     android:id="@+id/first_name"
+                    android:textColor="#000"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:text="Delivery Address"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:textSize="16sp"
                     android:id="@+id/address"
+                    android:textColor="#000"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:text="Contact Number"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:textSize="16sp"
                     android:id="@+id/phone"
+                    android:textColor="#000"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:text="Pay amount"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:textSize="16sp"
                     android:id="@+id/total"
+                    android:textColor="#000"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:text="Payment method"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
                     android:id="@+id/method"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
                     />
             </LinearLayout>
-            <Button
+
+            <soup.neumorphism.NeumorphButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="View order"
                 android:id="@+id/viewbtn"
+                style="@style/Widget.Neumorph.Button"
+                app:neumorph_shapeType="flat"
+                android:fontFamily="sans-serif-black"
+                android:layout_gravity="end"
+                android:layout_marginTop="-20dp"
 
 
                 />
@@ -173,13 +244,7 @@
 
         </LinearLayout>
 
-
-
-
-
-
-
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
 
 

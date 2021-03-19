@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewOrders"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
@@ -25,7 +26,9 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="550dp"
-        android:id="@+id/listfood"/>
+        android:id="@+id/listfood"
+
+        />
 
 
 
@@ -37,7 +40,7 @@
         android:layout_marginBottom="0dp"
 
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/sampleAccent"
+        app:itemBackground="@color/bottomColor"
         app:itemIconTint="@drawable/selector_nav_bottom"
         app:itemTextColor="@drawable/selector_nav_bottom"
 

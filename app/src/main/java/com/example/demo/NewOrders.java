@@ -46,6 +46,7 @@ public class NewOrders extends AppCompatActivity {
     private static String expireTime[];
     private static String first_name[];
     private  static  String address[];
+    private  static String restaurant[];
     private static String phone[];
     private static String total[];
     private static String method[];
@@ -126,6 +127,7 @@ public class NewOrders extends AppCompatActivity {
                     expireTime= new String[ja.length()];
                     first_name= new String[ja.length()];
                     address= new String[ja.length()];
+                    restaurant=new String[ja.length()];
                     phone = new String[ja.length()];
                     total = new String[ja.length()];
                     method = new String[ja.length()];
@@ -141,7 +143,8 @@ public class NewOrders extends AppCompatActivity {
 
                         expireTime[i]=jo.getString("time");
                         first_name[i] = jo.getString("first_name");
-                        address[i] = jo.getString("address");;
+                        address[i] = jo.getString("address");
+                        restaurant[i]=jo.getString("restaurant");
                         phone[i]=jo.getString("phone");
                         total[i]=jo.getString("total");
                         method[i]=jo.getString("method");
@@ -151,7 +154,7 @@ public class NewOrders extends AppCompatActivity {
 
                     }
 
-                    myadapter adptr = new myadapter(getApplicationContext(),order_id,expireTime, first_name, address,phone,total,method);
+                    myadapter adptr = new myadapter(getApplicationContext(),order_id,expireTime, first_name, address,restaurant,phone,total,method);
 
                     lv.setAdapter(adptr);
 
@@ -200,12 +203,13 @@ public class NewOrders extends AppCompatActivity {
        String expireTime[];
        String first_name[];
        String address[];
+       String restaurant[];
        String phone[];
        String total[];
        String method[];
 
 
-        myadapter(Context c, String order_id[],String expireTime[], String first_name[], String address[], String phone[],String total[],String method[])
+        myadapter(Context c, String order_id[],String expireTime[], String first_name[], String address[],String restaurant[], String phone[],String total[],String method[])
         {
             super(c,R.layout.card_short_term_order,R.id.phone,order_id);
             context=c;
@@ -213,6 +217,7 @@ public class NewOrders extends AppCompatActivity {
             this.expireTime=expireTime;
             this.first_name=first_name;
             this.address=address;
+            this.restaurant=restaurant;
             this.phone=phone;
             this.total=total;
             this.method=method;
@@ -236,6 +241,7 @@ public class NewOrders extends AppCompatActivity {
             TextView txtexpireTime=row.findViewById(R.id.expireTime);
             TextView txtfirst_name=row.findViewById(R.id.first_name);
             TextView txtfaddress=row.findViewById(R.id.address);
+            TextView txtrestaurant=row.findViewById(R.id.restaurant);
             TextView txtphone=row.findViewById(R.id.phone);
             TextView txtftotal=row.findViewById(R.id.total);
             TextView txtmethod=row.findViewById(R.id.method);
@@ -253,6 +259,7 @@ public class NewOrders extends AppCompatActivity {
             txtexpireTime.setText(expireTime[position]);
             txtfirst_name.setText(first_name[position]);
             txtfaddress.setText(address[position]);
+            txtrestaurant.setText(restaurant[position]);
             txtphone.setText(phone[position]);
             txtftotal.setText(total[position]);
             txtmethod.setText(method[position]);

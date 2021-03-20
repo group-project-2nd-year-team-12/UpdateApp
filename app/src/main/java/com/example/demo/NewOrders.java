@@ -46,6 +46,8 @@ public class NewOrders extends AppCompatActivity {
 
     private static String order_id[];
     private static String expireTime[];
+    private static String shedule[];
+    private static String order_type[];
     private static String first_name[];
     private  static  String address[];
     private  static String restaurant[];
@@ -161,12 +163,14 @@ public class NewOrders extends AppCompatActivity {
                     order_id= new String[ja.length()];
 
                     expireTime= new String[ja.length()];
+                    shedule=new String[ja.length()];
                     first_name= new String[ja.length()];
                     address= new String[ja.length()];
                     restaurant=new String[ja.length()];
                     phone = new String[ja.length()];
                     total = new String[ja.length()];
                     method = new String[ja.length()];
+                    order_type=new String[ja.length()];
 
 
 
@@ -178,24 +182,26 @@ public class NewOrders extends AppCompatActivity {
                         order_id[i]=jo.getString("order_id");
 
                         expireTime[i]=jo.getString("time");
+                        shedule[i]=jo.getString("shedule");
                         first_name[i] = jo.getString("first_name");
                         address[i] = jo.getString("address");
                         restaurant[i]=jo.getString("restaurant");
                         phone[i]=jo.getString("phone");
                         total[i]=jo.getString("total");
                         method[i]=jo.getString("method");
+                        order_type[i]=jo.getString("order_type");
 
 
 
 
                     }
 
-                    myadapter adptr = new myadapter(getApplicationContext(),order_id,expireTime, first_name, address,restaurant,phone,total,method);
+                    myadapter adptr = new myadapter(getApplicationContext(),order_id,expireTime,shedule, first_name, address,restaurant,phone,total,method,order_type);
 
                     lv.setAdapter(adptr);
 
                 } catch (Exception ex) {
-                    Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "None", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -237,26 +243,30 @@ public class NewOrders extends AppCompatActivity {
 
         String order_id[];
        String expireTime[];
+       String shedule[];
        String first_name[];
        String address[];
        String restaurant[];
        String phone[];
        String total[];
        String method[];
+       String order_type[];
 
 
-        myadapter(Context c, String order_id[],String expireTime[], String first_name[], String address[],String restaurant[], String phone[],String total[],String method[])
+        myadapter(Context c, String order_id[],String expireTime[],String shedule[],String first_name[], String address[],String restaurant[], String phone[],String total[],String method[],String order_type[])
         {
-            super(c,R.layout.card_short_term_order,R.id.phone,order_id);
+            super(c,R.layout.card_short_term_all,R.id.order_id,order_id);
             context=c;
             this.order_id=order_id;
             this.expireTime=expireTime;
+            this.shedule=shedule;
             this.first_name=first_name;
             this.address=address;
             this.restaurant=restaurant;
             this.phone=phone;
             this.total=total;
             this.method=method;
+            this.order_type=order_type;
 
 
 
@@ -268,13 +278,14 @@ public class NewOrders extends AppCompatActivity {
         public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent)
         {
             LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row=inflater.inflate(R.layout.card_short_term_order,parent,false);
+            View row=inflater.inflate(R.layout.card_short_term_all,parent,false);
 
 
 
 
 
             TextView txtexpireTime=row.findViewById(R.id.expireTime);
+            TextView txtshedule=row.findViewById(R.id.shedule);
             TextView txtfirst_name=row.findViewById(R.id.first_name);
             TextView txtfaddress=row.findViewById(R.id.address);
             TextView txtrestaurant=row.findViewById(R.id.restaurant);
@@ -282,6 +293,7 @@ public class NewOrders extends AppCompatActivity {
             TextView txtftotal=row.findViewById(R.id.total);
             TextView txtmethod=row.findViewById(R.id.method);
             TextView txtorderId=row.findViewById(R.id.order_id);
+            TextView txtorder_type=row.findViewById(R.id.order_type);
              btnAccept=row.findViewById(R.id.viewbtn);
 
 
@@ -293,12 +305,14 @@ public class NewOrders extends AppCompatActivity {
 
 
             txtexpireTime.setText(expireTime[position]);
+            txtshedule.setText(shedule[position]);
             txtfirst_name.setText(first_name[position]);
             txtfaddress.setText(address[position]);
             txtrestaurant.setText(restaurant[position]);
             txtphone.setText(phone[position]);
             txtftotal.setText(total[position]);
             txtmethod.setText(method[position]);
+            txtorder_type.setText(order_type[position]);
             Oid=order_id[position];
 
 //            textView.setOnClickListener(new View.OnClickListener() {

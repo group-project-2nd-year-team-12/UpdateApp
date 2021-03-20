@@ -12,7 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OrderCardPay"></activity>
+        <activity android:name=".DinnerOrder"
+            android:parentActivityName=".NewOrders"/>
+        <activity android:name=".LunchOrder"
+            android:parentActivityName=".NewOrders"/>
+        <activity android:name=".BreakfastOrder"
+            android:parentActivityName=".NewOrders"/>
+        <activity android:name=".ShortTermFoodType" />
+        <activity android:name=".OrderCardPay" />
         <activity android:name=".DeliveredOrder" />
         <activity
             android:name=".viewOrdersShort"

@@ -102,6 +102,10 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
                 i=new Intent(getApplicationContext(),NewOrders.class);
                 startActivity(i);
                 break;
+            case R.id.c2:
+                i=new Intent(getApplicationContext(),ShortTermFoodType.class);
+                startActivity(i);
+                break;
             case R.id.c3:
                 i=new Intent(getApplicationContext(),DeliveredOrder.class);
                 startActivity(i);

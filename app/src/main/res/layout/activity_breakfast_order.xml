@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_height="wrap_content"
 
-        app:titleMarginStart="50dp"
+        app:titleMarginStart="40dp"
         android:background="#000080"
         android:elevation="4dp"
         app:title="Food Order-Breakfast"

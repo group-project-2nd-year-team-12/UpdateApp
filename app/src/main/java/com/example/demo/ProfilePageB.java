@@ -73,6 +73,8 @@ public class ProfilePageB extends AppCompatActivity {
 
         fetch_data_into_array(lv);
 
+
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -271,6 +273,7 @@ public class ProfilePageB extends AppCompatActivity {
             intentLast=last_name[position];
             intentIns=institute[position];
             intentTel=telephone[position];
+
 
 
 

@@ -135,10 +135,11 @@ public class OrderFood extends AppCompatActivity  {
                                 @Override
                                 public void onItemClick(int position) {
                                     //productList.get(position)
-                                    Intent intent=new Intent(OrderFood.this,InsideFoodPost.class);
+                                    Intent intent=new Intent(OrderFood.this,OrderFoodBHome.class);
                                     FoodName item=foodNameList.get(position);
                                     intent.putExtra("F_post_id",item.getF_post_id());
                                     intent.putExtra("image",item.getImage());
+                                    intent.putExtra("title",item.getTitle());
                                     startActivity(intent);
                                     Toast.makeText(OrderFood.this,"One item selected",Toast.LENGTH_LONG).show();
                                 }

@@ -40,7 +40,7 @@ public class FoodPage extends AppCompatActivity {
         Acceptorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),AcceptedOrder.class);
+                Intent intent=new Intent(getApplicationContext(),OrderFoodBHome.class);
                 startActivity(intent);
                // Toasty.info(getApplicationContext(),"Welcome to Order food Page",Toast.LENGTH_LONG).show();
             }

@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -38,6 +39,7 @@ public class NewOrders extends AppCompatActivity {
     ListView lv;
      String Oid;
 
+     CardView c1,c2,c3;
 
 
 
@@ -60,6 +62,40 @@ public class NewOrders extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_orders);
+
+        c1=findViewById(R.id.c1);
+        c2=findViewById(R.id.c2);
+        c3=findViewById(R.id.c3);
+
+
+
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c1.setVisibility(View.GONE);
+                c2.setVisibility(View.INVISIBLE);
+                c3.setVisibility(View.INVISIBLE);
+                startActivity(new Intent(getApplicationContext(),BreakfastOrder.class));
+            }
+        });
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c2.setVisibility(View.GONE);
+                c1.setVisibility(View.INVISIBLE);
+                c3.setVisibility(View.INVISIBLE);
+                startActivity(new Intent(getApplicationContext(),LunchOrder.class));
+            }
+        });
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c3.setVisibility(View.GONE);
+                c2.setVisibility(View.INVISIBLE);
+                c1.setVisibility(View.INVISIBLE);
+                startActivity(new Intent(getApplicationContext(),DinnerOrder.class));
+            }
+        });
 
         //set the shared preferences
         SharedPreferences sp=getApplicationContext().getSharedPreferences("details", Context.MODE_PRIVATE);

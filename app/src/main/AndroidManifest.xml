@@ -48,7 +48,8 @@
         <activity
             android:name=".SettingFS"
             android:parentActivityName=".HomeFSupplier" />
-        <activity android:name=".InsideFoodPost" />
+        <activity android:name=".InsideFoodPost"
+            android:parentActivityName=".BreakfastFood"/>
         <activity android:name=".BottomToolbar" />
         <activity android:name=".AddBTem" />
         <activity android:name=".SearchDetails" />

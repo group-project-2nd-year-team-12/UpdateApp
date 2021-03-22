@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Neumorph.CardView"
+        android:background="#fff"
+        app:neumorph_shapeType="flat"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ORDER INFO"
+                android:layout_gravity="center"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimaryDark"
+                style="@style/Widget.Neumorph.TextView"
+                app:neumorph_shapeType="flat"
+
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                >
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Order Id"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_id"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                >
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ordered Items"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <soup.neumorphism.NeumorphTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View order"
+                    android:background="@color/bottomColorN"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"
+                    android:id="@+id/viewbtn"
+
+                    app:neumorph_shapeType="flat"
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ordered Time"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:id="@+id/expireTime"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Time"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:id="@+id/shedule"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Resturent"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/restaurant"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Name"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:id="@+id/first_name"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Address"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:id="@+id/address"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Number"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:id="@+id/phone"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pay amount"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:id="@+id/total"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Payment method"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:id="@+id/method"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+
+
+
+
+
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer will pay then you can supply food."
+                android:background="@color/bottomColorN"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+
+                android:layout_marginLeft="20dp"
+                app:neumorph_shapeType="flat"
+
+                />
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

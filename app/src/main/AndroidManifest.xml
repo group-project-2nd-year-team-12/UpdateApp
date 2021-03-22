@@ -12,12 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DinnerFood"
-            android:parentActivityName=".OrderFoodBHome"/>
-        <activity android:name=".LunchFood"
-            android:parentActivityName=".OrderFoodBHome"/>
-        <activity android:name=".BreakfastFood"
-            android:parentActivityName=".OrderFoodBHome"/>
+        <activity android:name=".confirmOrder"></activity>
+        <activity
+            android:name=".ViewDeliveryOrder"
+            android:parentActivityName=".DeliveredOrder" />
+        <activity
+            android:name=".DinnerFood"
+            android:parentActivityName=".OrderFoodBHome" />
+        <activity
+            android:name=".LunchFood"
+            android:parentActivityName=".OrderFoodBHome" />
+        <activity
+            android:name=".BreakfastFood"
+            android:parentActivityName=".OrderFoodBHome" />
         <activity
             android:name=".OrderFoodBHome"
             android:parentActivityName=".OrderFood" />
@@ -31,8 +38,11 @@
             android:name=".BreakfastOrder"
             android:parentActivityName=".NewOrders" />
         <activity android:name=".ShortTermFoodType" />
-        <activity android:name=".OrderCardPay" />
-        <activity android:name=".DeliveredOrder" />
+        <activity android:name=".OrderCardPay"
+            android:parentActivityName=".HomeFSupplier"/>
+        <activity
+            android:name=".DeliveredOrder"
+            android:parentActivityName=".HomeFSupplier" />
         <activity
             android:name=".viewOrdersShort"
             android:parentActivityName=".NewOrders" />
@@ -48,8 +58,9 @@
         <activity
             android:name=".SettingFS"
             android:parentActivityName=".HomeFSupplier" />
-        <activity android:name=".InsideFoodPost"
-            android:parentActivityName=".BreakfastFood"/>
+        <activity
+            android:name=".InsideFoodPost"
+            android:parentActivityName=".BreakfastFood" />
         <activity android:name=".BottomToolbar" />
         <activity android:name=".AddBTem" />
         <activity android:name=".SearchDetails" />

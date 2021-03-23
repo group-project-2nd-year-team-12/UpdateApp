@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".DinnerFood"
     android:orientation="vertical">
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ishan3"
-        android:id="@+id/ishan"
-        />
+        android:text="ishan1"
+        android:id="@+id/ishan"/>
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="#000080"
+        android:elevation="4dp"
+        app:title="Food-Dinner"
+        app:titleMarginStart="40dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listfoodB"/>
 </LinearLayout>

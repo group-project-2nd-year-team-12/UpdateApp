@@ -174,8 +174,8 @@ public class InsideFoodPost extends AppCompatActivity {
 
     public void onOrder(View view) {
         if ((TextUtils.isEmpty(editaddress.getText())) & (TextUtils.isEmpty(editphone.getText())) ){
-            editaddress.setError("Enter Value");
-            editphone.setError("Enter number");
+            editaddress.setError("Enter address");
+            editphone.setError("Enter phone number");
 //                   editaddress.requestFocus();
 //                   editphone.requestFocus();
 
@@ -192,7 +192,8 @@ public class InsideFoodPost extends AppCompatActivity {
 
             BackgroundFoodReqB b=new BackgroundFoodReqB(this);
             b.execute(type,emailShared,address,first,last,term,order_type,shedule,title,F_post_id,price,phone,method,product_name);
-            Toast.makeText(getApplicationContext(),address+" "+phone,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),term+" "+order_type,Toast.LENGTH_LONG).show();
+            startActivity(new Intent(getApplicationContext(),PendingOrder.class));
         }
     }
 
@@ -234,12 +235,6 @@ public class InsideFoodPost extends AppCompatActivity {
 
             first=first_name[position];
             last=last_name[position];
-
-
-
-
-
-
 
             return row;
         }

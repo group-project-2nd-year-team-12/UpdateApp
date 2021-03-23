@@ -41,6 +41,7 @@ public class BreakfastFood extends AppCompatActivity {
     String F_post_id;
     String first_name,emailShared,title;
 
+    String type="breakfast";
 //selectFoodB.php
 
     private static String product_name[];
@@ -171,6 +172,7 @@ public class BreakfastFood extends AppCompatActivity {
             TextView txtprice=row.findViewById(R.id.price);
             ImageView imgfood=row.findViewById(R.id.image);
 
+
             Button btn=row.findViewById(R.id.btnAdd);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -190,6 +192,7 @@ public class BreakfastFood extends AppCompatActivity {
                             intent.putExtra("product_name",product_name[position]);
                             intent.putExtra("image",image[position]);
                             intent.putExtra("price",price[position]);
+                            intent.putExtra("type",type);
                             intent.putExtra("title",title);
 
                             startActivity(intent);

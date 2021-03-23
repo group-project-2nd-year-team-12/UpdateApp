@@ -20,13 +20,14 @@ import androidx.cardview.widget.CardView;
       //  import es.dmoral.toasty.Toasty;
 
 public class FoodPage extends AppCompatActivity {
-    CardView orderfood,Acceptorder;
+    CardView orderfood,pendingOrder,Acceptorder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_page);
         orderfood=findViewById(R.id.c1);
-        Acceptorder=findViewById(R.id.c2);
+        pendingOrder=findViewById(R.id.c2);
+        Acceptorder=findViewById(R.id.c3);
 
         orderfood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,10 +38,18 @@ public class FoodPage extends AppCompatActivity {
             }
         });
 
+        pendingOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),PendingOrder.class);
+                startActivity(intent);
+            }
+        });
+
         Acceptorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),OrderFoodBHome.class);
+                Intent intent=new Intent(getApplicationContext(),DeliverOrderBoarder.class);
                 startActivity(intent);
                // Toasty.info(getApplicationContext(),"Welcome to Order food Page",Toast.LENGTH_LONG).show();
             }

@@ -41,6 +41,7 @@ public class InsideFoodPost extends AppCompatActivity {
     Button order;
     ListView lv;
     TextView txtproduct_name,txtprice;
+    String order_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,7 @@ public class InsideFoodPost extends AppCompatActivity {
          product_name=intent.getStringExtra("product_name");
          price=intent.getStringExtra("price");
          title=intent.getStringExtra("title");
+         order_type=intent.getStringExtra("type");
 
 
 //        TextView txtF_post_id=findViewById(R.id.F_post_id);
@@ -185,7 +187,7 @@ public class InsideFoodPost extends AppCompatActivity {
             phone=editphone.getText().toString();
             String type="InsertFoodB";
             String term="shortTerm";
-            String order_type="breakfast";
+
             String shedule="now";
             String method="cash";
 

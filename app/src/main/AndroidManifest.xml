@@ -12,11 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CancelPendingOB"></activity>
+        <activity android:name=".ConfirmDelOrderB"></activity>
+        <activity android:name=".CancelPendingOB" />
         <activity
             android:name=".ViewPendingOrderB"
             android:parentActivityName=".PendingOrder" />
-        <activity android:name=".DeliverOrderBoarder" />
+        <activity
+            android:name=".DeliverOrderBoarder"
+            android:parentActivityName=".FoodPage" />
         <activity
             android:name=".PendingOrder"
             android:parentActivityName=".FoodPage" />

@@ -8,7 +8,7 @@
 
     <soup.neumorphism.NeumorphCardView
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="360dp"
         style="@style/Widget.Neumorph.CardView"
         android:background="#fff"
         app:neumorph_shapeType="flat"
@@ -266,10 +266,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Please confirm that your order has been received"
-                android:background="@color/bottomColorN"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="17sp"
 
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+
+                style="@style/Widget.Neumorph.TextView"
                 app:neumorph_shapeType="flat"
                 />
 
@@ -281,9 +283,14 @@
 
                 android:id="@+id/confirm"
                 android:fontFamily="sans-serif-black"
-                android:background="@drawable/food_accept_button"
-                android:layout_gravity="end"
+                android:textColor="#ffffff"
+                android:background="@drawable/food_navy_button"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="5dp"
+
+
                 />
+
 
 
 

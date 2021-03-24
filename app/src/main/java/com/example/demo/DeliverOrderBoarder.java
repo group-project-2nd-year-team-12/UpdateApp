@@ -288,7 +288,7 @@ public class DeliverOrderBoarder extends AppCompatActivity {
                 public void onClick(View v) {
 
                     AlertDialog.Builder alert=new AlertDialog.Builder(DeliverOrderBoarder.this);
-                    alert.setMessage("Are you want to confirm this order?");
+                    alert.setMessage("Do you want to confirm this order?");
                     alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

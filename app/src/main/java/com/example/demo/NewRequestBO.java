@@ -238,7 +238,7 @@ public class NewRequestBO extends AppCompatActivity {
                   public void onClick(View v) {
 
                       AlertDialog.Builder alert=new AlertDialog.Builder(NewRequestBO.this);
-                      alert.setMessage("Are you want to accept request?").
+                      alert.setMessage("Do you want to accept request?").
                       setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                           @Override
                           public void onClick(DialogInterface dialog, int which) {
@@ -301,7 +301,7 @@ public class NewRequestBO extends AppCompatActivity {
 
 
                      AlertDialog.Builder alert=new AlertDialog.Builder(NewRequestBO.this).
-                             setMessage("Are you want to cancel request?").
+                             setMessage("Do you want to cancel request?").
                              setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                  @Override
                                  public void onClick(DialogInterface dialog, int which) {

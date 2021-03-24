@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,8 @@ public class FoodNameAdapter extends RecyclerView.Adapter<FoodNameAdapter.FoodNa
     private List<FoodName> foodNameList;
 
 
+
+    RatingBar ratingBar;
 
 
 
@@ -54,7 +57,7 @@ public class FoodNameAdapter extends RecyclerView.Adapter<FoodNameAdapter.FoodNa
 
         FoodName foodName=foodNameList.get(position);
         holder.textViewTitle.setText(foodName.getTitle());
-        holder.textViewrating.setText(foodName.getRating());
+       // holder.textViewrating.setText(foodName.getRating());
         holder.textViewdaddress.setText(foodName.getAddress());
         holder.textViewdescription.setText(foodName.getDescription());
         Glide.with(mCtx).load(foodName.getImage()).into(holder.imageView);
@@ -77,9 +80,10 @@ public class FoodNameAdapter extends RecyclerView.Adapter<FoodNameAdapter.FoodNa
             super(itemView);
             imageView=itemView.findViewById(R.id.foodimg);
             textViewTitle=itemView.findViewById(R.id.title);
+            ratingBar=itemView.findViewById(R.id.rating_bar);
             textViewdescription=itemView.findViewById(R.id.description);
             textViewdaddress=itemView.findViewById(R.id.location);
-            textViewrating=itemView.findViewById(R.id.rating);
+          //  textViewrating=itemView.findViewById(R.id.rating);
 
 
 

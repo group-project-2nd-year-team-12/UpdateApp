@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
 
 
 <androidx.cardview.widget.CardView
     android:layout_width="400dp"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+
+   >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,10 +22,11 @@ android:orientation="vertical">
 
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="200dp"
+            android:layout_width="170dp"
             android:layout_height="150dp"
             android:id="@+id/foodimg"
-            android:src="@drawable/anuki"/>
+            android:layout_marginLeft="10dp"
+            />
 
 
 
@@ -30,28 +36,57 @@ android:orientation="vertical">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="10dp"
+           >
+
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rasika food delvery"
+                android:id="@+id/title"
+
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                style="@style/Widget.Neumorph.TextView"
+                app:neumorph_shapeType="flat"
+
+                />
 
 
-            <TextView
+
+            <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rasika food delvery"
-                android:id="@+id/title"/>
+                android:id="@+id/rating_bar"
+                android:numStars="5"
+                android:rating="4"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:progressTint="#ffd633"
+                android:progressBackgroundTint="#cca300"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Rasika food delvery"-->
+<!--                android:id="@+id/rating"/>-->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rasika food delvery"
-                android:id="@+id/rating"/>
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:id="@+id/location"
+                android:layout_marginTop="5dp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rasika food delvery"
-                android:id="@+id/location"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rasika food delvery"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+
                 android:id="@+id/description"/>
 
 

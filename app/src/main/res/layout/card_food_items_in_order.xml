@@ -22,6 +22,7 @@
                 android:layout_height="200dp"
                 android:id="@+id/image"
                 android:src="@drawable/cover"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="50dp"/>
             <soup.neumorphism.NeumorphTextView
                 style="@style/Widget.Neumorph.TextView"

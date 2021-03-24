@@ -28,7 +28,12 @@
     <com.smarteist.autoimageslider.SliderLayout
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+
+        />
 
 <!--    <soup.neumorphism.NeumorphImageView-->
 <!--        android:layout_width="match_parent"-->
@@ -39,9 +44,17 @@
 
     <androidx.cardview.widget.CardView
 
-       android:layout_margin="10dp"
-        android:layout_width="match_parent"
+
+
         android:layout_height="120dp"
+
+        android:layout_width="390dp"
+        app:cardElevation="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
         android:id="@+id/c1"
         >
         <LinearLayout
@@ -74,9 +87,20 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+
         android:layout_height="120dp"
-        android:layout_margin="10dp"
+
+
+        android:layout_width="390dp"
+        app:cardElevation="10dp"
+
+
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
         android:id="@+id/c2"
 
         >
@@ -111,10 +135,20 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:layout_width="390dp"
+        app:cardElevation="10dp"
 
-        android:layout_width="match_parent"
+
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
+
+
         android:layout_height="120dp"
-        android:layout_margin="10dp"
+
         android:id="@+id/c3">
         <LinearLayout
             android:layout_width="match_parent"

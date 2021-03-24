@@ -183,7 +183,7 @@ public class BreakfastFood extends AppCompatActivity {
 
 
                     AlertDialog.Builder alert=new AlertDialog.Builder(BreakfastFood.this);
-                    alert.setMessage("Are you want to order "+product_name[position]+"? ").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    alert.setMessage("Do you want to order "+product_name[position]+"? ").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getApplicationContext(),"You can add that item",Toast.LENGTH_LONG).show();

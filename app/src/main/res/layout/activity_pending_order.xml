@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
         android:background="@color/colorPrimaryDark"
-        app:titleMarginStart="40dp"
+
+        app:titleMarginStart="60dp"
         app:title="Pending Orders"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"

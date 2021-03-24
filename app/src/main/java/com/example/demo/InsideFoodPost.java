@@ -178,7 +178,7 @@ public class InsideFoodPost extends AppCompatActivity {
     public void onOrder(View view) {
         address=editaddress.getText().toString().trim();
         phone=editphone.getText().toString().trim();
-        if (address.length()==0 || address.length()<10){
+        if (address.length()==0){
             editaddress.setError("Please Enter Valid Address");
             //Toast.makeText(getApplicationContext(),"Please Enter Address",Toast.LENGTH_LONG).show();
         }else if(!phone.matches("[0-9]{10}")){

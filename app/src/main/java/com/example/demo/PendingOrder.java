@@ -269,7 +269,7 @@ public class PendingOrder extends AppCompatActivity {
                 public void onClick(View v) {
 
                     AlertDialog.Builder alert=new AlertDialog.Builder(PendingOrder.this);
-                    alert.setMessage("Are you want to cancel this order?");
+                    alert.setMessage("Do you want to cancel this order?");
                     alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

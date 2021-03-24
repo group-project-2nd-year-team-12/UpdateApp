@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_height="wrap_content"
 
-        app:titleMarginStart="40dp"
+        app:titleMarginStart="80dp"
         android:background="#000080"
         android:elevation="4dp"
         app:title="Food Page"
@@ -20,44 +20,55 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/F_post_id"/>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/F_post_id"/>-->
 
     <com.smarteist.autoimageslider.SliderLayout
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
-    <soup.neumorphism.NeumorphImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/cover"
-        android:id="@+id/image"
-        style="@style/Widget.Neumorph.ImageView"/>
+<!--    <soup.neumorphism.NeumorphImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:src="@drawable/cover"-->
+<!--        android:id="@+id/image"-->
+<!--        style="@style/Widget.Neumorph.ImageView"/>-->
 
     <androidx.cardview.widget.CardView
+
        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:id="@+id/c1">
+        android:layout_height="120dp"
+        android:id="@+id/c1"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:orientation="horizontal">
-            <ImageView
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            >
+            <soup.neumorphism.NeumorphImageView
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/cover"/>
-            <TextView
+                style="@style/ShapeAppearance.Neumorph.ImageView"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                app:neumorph_shapeType="flat"
+                android:src="@drawable/b"
+                />
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Breakfast"
                 android:textSize="30sp"
-                android:layout_marginTop="35dp"
-                android:layout_marginLeft="20dp"/>
+                android:textColor="@color/bottomColor"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"
+                app:neumorph_shapeType="flat"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -67,24 +78,33 @@
         android:layout_height="120dp"
         android:layout_margin="10dp"
         android:id="@+id/c2"
-        style="@style/Widget.Neumorph.CardView"
+
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+            <soup.neumorphism.NeumorphImageView
 
-                android:layout_height="100dp"
-                android:src="@drawable/cover"/>
-            <TextView
+                style="@style/ShapeAppearance.Neumorph.ImageView"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                app:neumorph_shapeType="flat"
+                android:src="@drawable/l"
+                />
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lunch"
                 android:textSize="30sp"
-                android:layout_marginTop="35dp"
-                android:layout_marginLeft="20dp"/>
+                android:textColor="@color/bottomColor"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="15dp"
+                app:neumorph_shapeType="flat"/>
+
         </LinearLayout>
 
 
@@ -98,20 +118,28 @@
         android:id="@+id/c3">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+            <soup.neumorphism.NeumorphImageView
 
-                android:layout_height="100dp"
-                android:src="@drawable/cover"/>
-            <TextView
+                style="@style/ShapeAppearance.Neumorph.ImageView"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                app:neumorph_shapeType="flat"
+                android:src="@drawable/d"
+                />
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dinner"
                 android:textSize="30sp"
-                android:layout_marginTop="35dp"
-                android:layout_marginLeft="20dp"/>
+                android:textColor="@color/bottomColor"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="15dp"
+                app:neumorph_shapeType="flat"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

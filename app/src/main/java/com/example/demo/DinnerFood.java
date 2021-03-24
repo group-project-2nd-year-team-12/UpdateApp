@@ -56,11 +56,11 @@ public class DinnerFood extends AppCompatActivity {
         SharedPreferences sp=getApplicationContext().getSharedPreferences("details", Context.MODE_PRIVATE);
         emailShared=sp.getString("username","No name");
 
-        txt=findViewById(R.id.ishan);
+      //  txt=findViewById(R.id.ishan);
         Intent intent=getIntent();
         F_post_id=intent.getStringExtra("F_post_id");
         title=intent.getStringExtra("title");
-        txt.setText(title);
+        //txt.setText(title);
         //  txt.setText(intent.getStringExtra("F_post_id"));
 
         //set the toolbar

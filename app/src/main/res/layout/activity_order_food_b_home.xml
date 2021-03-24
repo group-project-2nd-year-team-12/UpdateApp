@@ -25,6 +25,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/F_post_id"/>
 
+    <com.smarteist.autoimageslider.SliderLayout
+        android:id="@+id/imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
     <soup.neumorphism.NeumorphImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"

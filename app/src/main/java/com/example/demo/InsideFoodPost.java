@@ -256,9 +256,9 @@ public class InsideFoodPost extends AppCompatActivity {
 
 
 
-            TextView txtfirst_name=row.findViewById(R.id.first_name);
-
-            txtfirst_name.setText(first_name[position]+" "+last_name[position]);
+//            TextView txtfirst_name=row.findViewById(R.id.first_name);
+//
+//            txtfirst_name.setText(first_name[position]+" "+last_name[position]);
 
             first=first_name[position];
             last=last_name[position];

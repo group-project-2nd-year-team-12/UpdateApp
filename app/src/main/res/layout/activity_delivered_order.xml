@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DeliveredOrder"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
         android:background="#000080"
+        app:titleMarginStart="60dp"
         android:elevation="4dp"
         app:title="Delivered Orders"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"

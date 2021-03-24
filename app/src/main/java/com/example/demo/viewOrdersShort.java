@@ -128,6 +128,11 @@ public class viewOrdersShort extends AppCompatActivity {
     }
 
     public void onAccept(View view) throws ExecutionException, InterruptedException {
+
+
+
+
+
         Toast.makeText(viewOrdersShort.this,method,Toast.LENGTH_LONG).show();
         if (method.equals("cash")){
             String type="updateSFoodAccept";

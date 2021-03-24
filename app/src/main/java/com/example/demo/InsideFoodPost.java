@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +41,8 @@ public class InsideFoodPost extends AppCompatActivity {
     ListView lv;
     TextView txtproduct_name,txtprice;
     String order_type;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,16 +176,16 @@ public class InsideFoodPost extends AppCompatActivity {
     }
 
     public void onOrder(View view) {
-        if ((TextUtils.isEmpty(editaddress.getText())) & (TextUtils.isEmpty(editphone.getText())) ){
-            editaddress.setError("Enter address");
-            editphone.setError("Enter phone number");
-//                   editaddress.requestFocus();
-//                   editphone.requestFocus();
-
-
+        address=editaddress.getText().toString().trim();
+        phone=editphone.getText().toString().trim();
+        if (address.length()==0 || address.length()<10){
+            editaddress.setError("Please Enter Valid Address");
+            //Toast.makeText(getApplicationContext(),"Please Enter Address",Toast.LENGTH_LONG).show();
+        }else if(!phone.matches("[0-9]{10}")){
+            editphone.setError("Enter Only 10 digit Mobile Number ");
         }else{
-            address=editaddress.getText().toString();
-            phone=editphone.getText().toString();
+            address=editaddress.getText().toString().trim();
+            phone=editphone.getText().toString().trim();
             String type="InsertFoodB";
             String term="shortTerm";
 
@@ -197,6 +198,30 @@ public class InsideFoodPost extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),term+" "+order_type,Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(),PendingOrder.class));
         }
+
+
+//        if (TextUtils.isEmpty(editaddress.getText())  ){
+//            editaddress.setError("Enter address");
+//            editphone.setError("Enter phone number");
+////                   editaddress.requestFocus();
+////                   editphone.requestFocus();
+//
+//
+//        }else{
+//            address=editaddress.getText().toString().trim();
+//            phone=editphone.getText().toString().trim();
+//            String type="InsertFoodB";
+//            String term="shortTerm";
+//
+//            String shedule="now";
+//            String method="cash";
+//
+//
+//            BackgroundFoodReqB b=new BackgroundFoodReqB(this);
+//            b.execute(type,emailShared,address,first,last,term,order_type,shedule,title,F_post_id,price,phone,method,product_name);
+//            Toast.makeText(getApplicationContext(),term+" "+order_type,Toast.LENGTH_LONG).show();
+//            startActivity(new Intent(getApplicationContext(),PendingOrder.class));
+//        }
     }
 
 

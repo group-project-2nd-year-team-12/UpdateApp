@@ -133,6 +133,7 @@
               android:layout_height="wrap_content"
 
               android:id="@+id/editPhone"
+              android:background="@android:color/white"
               android:inputType="phone"
               android:textSize="18sp"
               android:hint="0768610084"/>

@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
            >
 
             <soup.neumorphism.NeumorphTextView
@@ -84,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rasika food delvery"
+                android:layout_marginRight="10dp"
                 android:textSize="12sp"
                 android:layout_marginTop="5dp"
 

@@ -1,19 +1,17 @@
 package com.example.demo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.concurrent.ExecutionException;
 
@@ -48,8 +46,8 @@ TextView TextForget,TextRegister ;
 
 
         Background background=new Background(this);
-       String  result = background.execute(type, username, password,level).get();
-                if (result.equals("LOGIN SUCCESS")){
+       String  result = background.execute(type, username, password).get();
+                if (result.equals("LOGIN Boarder")){
 
                     SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
                     SharedPreferences.Editor editor=sharedPreferences.edit();
@@ -58,22 +56,61 @@ TextView TextForget,TextRegister ;
 
                     SharedPreferences sharedPreferences1=getSharedPreferences("details",MODE_PRIVATE);
                     String email=sharedPreferences.getString("username","No name");
-                    if (level.equals("boarder")){
-                        Intent i = new Intent(this,HomeBO.class);
-                        this.startActivity(i);
-                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
-                    }else  if (level.equals("boardings_owner")){
-                        Intent i = new Intent(this,HomeBOwner.class);
-                        this.startActivity(i);
-                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
-                    }
-                    else  if (level.equals("food_supplier")){
-                        Intent i = new Intent(this,HomeFSupplier.class);
-                        this.startActivity(i);
-                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
-                    }
-                  // tt.setText(result);
-                }else{
+
+                    Intent i = new Intent(this,HomeBO.class);
+                    this.startActivity(i);
+                    Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
+
+
+
+//                    if (level.equals("boarder")){
+//                        Intent i = new Intent(this,HomeBO.class);
+//                        this.startActivity(i);
+//                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
+//                    }else  if (level.equals("boardings_owner")){
+//                        Intent i = new Intent(this,HomeBOwner.class);
+//                        this.startActivity(i);
+//                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
+//                    }
+//                    else  if (level.equals("food_supplier")){
+//                        Intent i = new Intent(this,HomeFSupplier.class);
+//                        this.startActivity(i);
+//                        Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
+//                    }
+//                  // tt.setText(result);
+                }else if (result.equals("LOGIN boardings_owner")){
+
+                    SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("username",username);
+                    editor.commit();
+
+                    SharedPreferences sharedPreferences1=getSharedPreferences("details",MODE_PRIVATE);
+                    String email=sharedPreferences.getString("username","No name");
+
+                    Intent i = new Intent(this,HomeBOwner.class);
+                    this.startActivity(i);
+                    Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
+                }
+                else if (result.equals("LOGIN food_supplier")){
+
+
+                    SharedPreferences sharedPreferences=getSharedPreferences("details",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("username",username);
+                    editor.commit();
+
+                    SharedPreferences sharedPreferences1=getSharedPreferences("details",MODE_PRIVATE);
+                    String email=sharedPreferences.getString("username","No name");
+
+                    Intent i = new Intent(this,HomeFSupplier.class);
+                    this.startActivity(i);
+                    Toast.makeText(this,"your username "+email,Toast.LENGTH_LONG).show();
+
+
+
+                }
+                else{
                     AlertDialog alertDialog = new AlertDialog.Builder(this).create();
                     alertDialog.setMessage(result);
                     alertDialog.show();

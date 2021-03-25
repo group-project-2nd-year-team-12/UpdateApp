@@ -89,10 +89,7 @@ public class Background extends AsyncTask<String,Void,String> {
 package com.example.demo;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.icu.util.Output;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
@@ -106,8 +103,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-
-import javax.net.ssl.HttpsURLConnection;
 
 
 public class Background extends AsyncTask<String,Void,String> {
@@ -128,7 +123,7 @@ public class Background extends AsyncTask<String,Void,String> {
             try {
                 String username=voids[1];
                 String password=voids[2];
-                String level=voids[3];
+              //  String level=voids[3];t
                 URL url=new URL(login_url);
                 HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -137,8 +132,8 @@ public class Background extends AsyncTask<String,Void,String> {
                 OutputStream outputStream=httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
                 String post_data= URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"+
-                        URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&"+
-                        URLEncoder.encode("level","UTF-8")+"="+URLEncoder.encode(level,"UTF-8");
+                        URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
+                       // URLEncoder.encode("level","UTF-8")+"="+URLEncoder.encode(level,"UTF-8");t
 
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();

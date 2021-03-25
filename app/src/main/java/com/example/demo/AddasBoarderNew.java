@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -222,6 +223,7 @@ public class AddasBoarderNew extends AppCompatActivity {
             TextView txtinstitute=row.findViewById(R.id.institute);
             TextView txtB_post_id=row.findViewById(R.id.post_id);
             TextView txtkeymoneyAmount=row.findViewById(R.id.keymoneyAmount);
+            TextView textViewB=row.findViewById(R.id.view_boarder);
             Button btnAdd=row.findViewById(R.id.addboarder);
           // TextView txtpayment_date=row.findViewById(R.id.payment_date);
 
@@ -253,6 +255,14 @@ public class AddasBoarderNew extends AppCompatActivity {
                 }
             });
 
+            textViewB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(getApplicationContext(),MyBoarders.class);
+                    Toast.makeText(getApplicationContext(),"Go to the my boarders page",Toast.LENGTH_LONG).show();
+                    startActivity(intent);
+                }
+            });
 
             txtrequest_id.setText(request_id[position]);
             txtfirst_name.setText(first_name[position]);

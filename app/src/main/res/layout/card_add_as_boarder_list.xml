@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -9,29 +10,32 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
+        >
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
 
            android:background="#3333"
            android:orientation="horizontal">
-           <TextView
-               android:layout_width="wrap_content"
+           <soup.neumorphism.NeumorphTextView
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="Manual Payment Approve"
                android:textSize="20sp"
-               />
+               style="@style/Widget.Neumorph.TextView"
+               android:textColor="#fff"
+               android:text="Manual Payment Approve"
+               android:textAlignment="center"
+               android:paddingTop="5dp"
+               android:paddingBottom="5dp"
+               android:background="@color/bottomColor"/>
 
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="request id:123"
-               android:id="@+id/request_id"
-               android:textSize="16sp"
-               android:layout_marginLeft="55dp"
-               android:layout_marginTop="10dp"
-               />
+
        </LinearLayout>
 
        <LinearLayout
@@ -41,7 +45,7 @@
            android:layout_marginTop="50dp">
 
            <LinearLayout
-               android:layout_width="wrap_content"
+               android:layout_width="205dp"
                android:layout_height="wrap_content"
                android:orientation="vertical"
                android:layout_marginLeft="5dp">
@@ -67,6 +71,8 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="Ishan"
+
+                       android:textColor="#000"
                        android:textSize="16sp"
                        android:id="@+id/name"/>
                </LinearLayout>
@@ -88,6 +94,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="Ishan"
+                       android:textColor="#000"
                        android:textSize="16sp"
                        android:id="@+id/gender"/>
                </LinearLayout>
@@ -109,6 +116,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="Ishan"
+                       android:textColor="#000"
                        android:textSize="16sp"
                        android:id="@+id/nic"/>
                </LinearLayout>
@@ -130,6 +138,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="0715822454"
+                       android:textColor="#000"
                        android:textSize="16sp"
                        android:id="@+id/telephone"/>
                </LinearLayout>
@@ -150,29 +159,48 @@
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="Ishan"
+                       android:text="University of Colombo"
+                       android:textColor="#000"
                        android:textSize="14sp"
                        android:id="@+id/institute"/>
                </LinearLayout>
                <View
-                   android:layout_width="160dp"
+                   android:layout_width="200dp"
                    android:layout_height="1dp"
-                   android:background="#000"/>
+                   android:background="#000"
+                   android:layout_marginTop="5dp"/>
 
                <LinearLayout
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:orientation="horizontal">
-                   <TextView
+                   android:orientation="horizontal"
+                   android:layout_marginTop="5dp">
+                   <soup.neumorphism.NeumorphTextView
+                       style="@style/Widget.Neumorph.TextView"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:text="click here"
+                       android:text="@string/view_boarder"
+                       android:id="@+id/view_boarder"
+                       android:textSize="16sp"
+                       android:textColor="#000"
+                       android:textStyle="bold"
                        />
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="to view My boarders"/>
+                       android:text="  to view My"
+                       android:textSize="16sp"
+                       android:textColor="#000"
+                       android:textStyle="bold"/>
                </LinearLayout>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="boarders"
+                   android:textSize="16sp"
+                   android:textColor="#000"
+                   android:textStyle="bold"
+                   android:layout_marginBottom="10dp"/>
 
 
 
@@ -194,13 +222,41 @@
                android:layout_marginLeft="5dp">
 
 
+
                <LinearLayout
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:orientation="horizontal">
 
                    <TextView
-                       android:layout_width="65dp"
+                       android:layout_width="90dp"
+                       android:layout_height="wrap_content"
+                       android:text="Request id:"
+
+                       android:textColor="#000"
+                       android:textStyle="bold"
+                       android:layout_marginLeft="5dp"
+                       android:textSize="16sp"/>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="123"
+                       android:textColor="#000"
+                       android:id="@+id/request_id"
+                       android:textSize="16sp"
+
+
+                       />
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="90dp"
                        android:layout_height="wrap_content"
                        android:text="Post id:"
 
@@ -213,6 +269,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="3"
+                       android:textColor="#000"
                        android:textSize="16sp"
                        android:id="@+id/post_id"/>
                </LinearLayout>
@@ -223,9 +280,9 @@
                    android:orientation="horizontal">
 
                    <TextView
-                       android:layout_width="65dp"
+                       android:layout_width="90dp"
                        android:layout_height="wrap_content"
-                       android:text="Amount:"
+                       android:text="Amount(Rs)"
 
                        android:textColor="#000"
                        android:textStyle="bold"
@@ -236,6 +293,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="3000"
+                       android:textColor="#000"
                        android:textSize="16sp"
 
                        android:id="@+id/keymoneyAmount"/>
@@ -243,13 +301,26 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:textColor="#000"
+                   android:textStyle="bold"
+                   android:layout_marginTop="10dp"
                    android:text="If Your payment recieved, click below to add as a boarder."/>
+
+
 
 
                <Button
                    android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Add Boarders"
+                   android:layout_height="30dp"
+                   android:text="Add"
+                   android:textSize="16sp"
+                   android:paddingLeft="5dp"
+                   android:paddingRight="5dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="60dp"
+
+                   android:textColor="#fff"
+                   android:background="@drawable/food_navy_button"
                    android:id="@+id/addboarder"
                   />
 

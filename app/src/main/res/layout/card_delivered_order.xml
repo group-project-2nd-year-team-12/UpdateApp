@@ -8,7 +8,7 @@ android:orientation="vertical">
 
 <soup.neumorphism.NeumorphCardView
     android:layout_width="match_parent"
-    android:layout_height="380dp"
+    android:layout_height="385dp"
     style="@style/Widget.Neumorph.CardView"
     android:background="#fff"
     app:neumorph_shapeType="flat"
@@ -77,8 +77,8 @@ android:orientation="vertical">
             <soup.neumorphism.NeumorphTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View order"
-                android:background="@color/bottomColorN"
+                android:text="@string/view_order"
+
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="17sp"
                 android:id="@+id/viewbtn"
@@ -285,6 +285,7 @@ android:orientation="vertical">
         <soup.neumorphism.NeumorphTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Please confirm that your order has been received"
 
             android:textColor="@color/colorPrimaryDark"

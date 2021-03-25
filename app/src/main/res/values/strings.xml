@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Demo</string>
-
+    <string name="view_order"><u>View Order</u></string>
     <string-array name="level">
         <item>boarder</item>
         <item>boardings_owner</item>
         <item>food_supplier</item>
+
     </string-array>
 </resources>

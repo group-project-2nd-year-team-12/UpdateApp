@@ -76,8 +76,8 @@
                 <soup.neumorphism.NeumorphTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="View order"
-                    android:background="@color/bottomColorN"
+                    android:text="@string/view_order"
+
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="17sp"
                     android:id="@+id/viewbtn"

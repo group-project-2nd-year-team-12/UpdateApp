@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileEditB"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -15,127 +16,142 @@
 
         android:background="#000080"
         android:elevation="4dp"
+        app:titleMarginStart="60dp"
 
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="400dp"
         android:layout_marginTop="100dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="First Name:"
-                android:textStyle="bold"
-                android:textColor="#000"/>
-            <EditText
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:text="ishan"
-                android:textSize="20sp"
-
-                android:id="@+id/first_name"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:text="Last Name:"/>
-
-            <EditText
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:text="ishan"
-                android:textSize="20sp"
-                android:id="@+id/last_name"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:text="Institute:"/>
-
-            <EditText
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:text="University of Colombo"
-                android:textSize="20sp"
-                android:id="@+id/institute"/>
-
-        </LinearLayout>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="20dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="30dp">
-
-            <TextView
-                android:layout_width="120dp"
+            android:orientation="vertical"
+            android:layout_marginTop="100dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="First Name:"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+                <EditText
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="ishan"
+                    android:textSize="20sp"
+
+                    android:id="@+id/first_name"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Last Name:"/>
+
+                <EditText
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="ishan"
+                    android:textSize="20sp"
+                    android:id="@+id/last_name"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Institute:"/>
+
+                <EditText
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="University of Colombo"
+                    android:textSize="20sp"
+                    android:id="@+id/institute"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="30dp">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Telephone:"/>
+
+                <EditText
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="ishan"
+                    android:textSize="20sp"
+                    android:id="@+id/telephone"/>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="250dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="70dp"
+                android:background="@drawable/editbutton_round"
+                android:onClick="onUpdate"
+                android:textSize="22sp"
+                android:text="Update"
                 android:textStyle="bold"
-                android:textColor="#000"
-                android:text="Telephone:"/>
+                android:textColor="#fff" />
 
-            <EditText
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:text="ishan"
-                android:textSize="20sp"
-                android:id="@+id/telephone"/>
+
 
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/update"
-            android:layout_width="250dp"
-            android:layout_height="63dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="70dp"
-            android:background="@drawable/editbutton_round"
-            android:onClick="onUpdate"
-            android:textSize="22sp"
-            android:text="Update"
-            android:textStyle="bold"
-            android:textColor="#fff" />
+    </androidx.cardview.widget.CardView>
 
 
-
-    </LinearLayout>
 
 
 </LinearLayout>

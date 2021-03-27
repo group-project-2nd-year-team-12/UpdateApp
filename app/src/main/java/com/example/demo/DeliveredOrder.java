@@ -7,7 +7,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
+        import android.view.MenuItem;
+        import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
         import android.widget.Button;
@@ -21,7 +22,9 @@ import androidx.annotation.Nullable;
         import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import org.json.JSONArray;
+        import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+        import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -79,6 +82,29 @@ public class DeliveredOrder extends AppCompatActivity {
 
 
 
+
+        //set the bottom navigation bar
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navy);
+
+        bottomNavigationView.setSelectedItemId(R.id.deliver);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.deliver:
+                        return true;
+
+                    case R.id.pending:
+                        startActivity(new Intent(getApplicationContext(),OrderCardPay.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+
+                return false;
+            }
+        });
 
 
 

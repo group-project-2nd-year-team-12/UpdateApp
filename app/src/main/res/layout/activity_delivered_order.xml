@@ -23,10 +23,22 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="550dp"
         android:id="@+id/listfooddelivery"
 
         />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navy"
+
+        android:layout_marginBottom="0dp"
+        app:itemBackground="@color/bottomColor"
+        app:itemIconTint="@drawable/selector_nav_bottom"
+        app:itemTextColor="@drawable/selector_nav_bottom"
+        app:menu="@menu/menu_navigation_orders"/>
 
 
 

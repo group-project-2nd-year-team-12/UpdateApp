@@ -13,7 +13,7 @@
         android:id="@+id/toolbar"
         android:background="#000080"
         android:elevation="4dp"
-        app:titleMarginStart="40dp"
+        app:titleMarginStart="60dp"
         app:title="Pending Orders"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
@@ -23,10 +23,21 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="550dp"
         android:id="@+id/listfoodpending"
 
         />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navy"
+
+        android:layout_marginBottom="0dp"
+        app:itemBackground="@color/bottomColor"
+        app:itemIconTint="@drawable/selector_nav_bottom"
+        app:itemTextColor="@drawable/selector_nav_bottom"
+        app:menu="@menu/menu_navigation_orders"/>
 
 
 </LinearLayout>

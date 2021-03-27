@@ -18,6 +18,15 @@ android:background="@drawable/gradient5"
         android:id="@+id/include"/>
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/covera"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+
+        android:id="@+id/profile"/>
 
 
 
@@ -25,8 +34,8 @@ android:background="@drawable/gradient5"
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:rowCount="3"
+        android:layout_marginTop="20dp"
+        android:rowCount="2"
         android:columnCount="2"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -38,7 +47,7 @@ android:background="@drawable/gradient5"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             app:cardCornerRadius="16dp"
             android:id="@+id/c1"
 
@@ -46,9 +55,10 @@ android:background="@drawable/gradient5"
             >
             <ImageView
                 android:layout_width="150dp"
-                android:layout_height="145dp"
+                android:layout_height="150dp"
                 android:src="@drawable/neworders"
                 android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:padding="20dp"
                 android:id="@+id/img1"/>
 
@@ -57,7 +67,7 @@ android:background="@drawable/gradient5"
                 android:layout_height="wrap_content"
                 android:text="New Orders"
                 android:textSize="20sp"
-                android:textColor="#6f6f6f"
+                android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:layout_gravity="bottom|center_horizontal"
                 android:paddingTop="30dp"
@@ -73,45 +83,9 @@ android:background="@drawable/gradient5"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             app:cardCornerRadius="16dp"
             android:id="@+id/c2"
-
-
-            >
-
-            <ImageView
-                android:layout_width="160dp"
-                android:layout_height="150dp"
-                android:src="@drawable/history2"
-                android:layout_gravity="center"
-                android:padding="20dp"
-                android:id="@+id/img2"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pending Order"
-                android:textSize="20sp"
-                android:textColor="#6f6f6f"
-                android:textAlignment="center"
-                android:layout_gravity="bottom|center_horizontal"
-                android:paddingTop="30dp"
-                />
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="16dp"
-            android:id="@+id/c3"
 
 
             >
@@ -122,14 +96,52 @@ android:background="@drawable/gradient5"
                 android:src="@drawable/todeliver"
                 android:layout_gravity="center"
                 android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:id="@+id/img2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accept Order"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingTop="30dp"
+                />
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="16dp"
+            android:id="@+id/c3"
+
+
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/fsprofile"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
                 android:id="@+id/img3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="To deliver"
+                android:text="Profile"
                 android:textSize="20sp"
-                android:textColor="#6f6f6f"
+                android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:layout_gravity="bottom|center_horizontal"
                 />
@@ -143,7 +155,7 @@ android:background="@drawable/gradient5"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
 
             app:cardCornerRadius="16dp"
             android:id="@+id/c4"
@@ -156,6 +168,7 @@ android:background="@drawable/gradient5"
                 android:src="@drawable/myads"
                 android:layout_gravity="center"
                 android:padding="20dp"
+                android:adjustViewBounds="true"
                 android:id="@+id/img4"/>
 
             <TextView
@@ -163,7 +176,7 @@ android:background="@drawable/gradient5"
                 android:layout_height="wrap_content"
                 android:text="My Ads"
                 android:textSize="20sp"
-                android:textColor="#6f6f6f"
+                android:textColor="@color/colorPrimaryDark"
 
                 android:textAlignment="center"
                 android:layout_gravity="bottom|center_horizontal"
@@ -184,75 +197,9 @@ android:background="@drawable/gradient5"
 
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-
-            android:layout_margin="5dp"
-            app:cardCornerRadius="16dp"
-            android:id="@+id/c5"
-
-
-            >
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/fsprofile"
-                android:layout_gravity="center"
-                android:padding="20dp"
-                android:id="@+id/img5"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="20sp"
-                android:textColor="#6f6f6f"
-                android:textAlignment="center"
-                android:layout_gravity="bottom|center_horizontal"
-                android:paddingTop="30dp"
-                />
 
 
 
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-
-            android:layout_margin="5dp"
-            app:cardCornerRadius="16dp"
-            android:id="@+id/c6"
-
-
-            >
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/fsprofile"
-                android:layout_gravity="center"
-                android:padding="20dp"
-                android:id="@+id/img6"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notification"
-                android:textSize="20sp"
-                android:textColor="#6f6f6f"
-                android:textAlignment="center"
-                android:layout_gravity="bottom|center_horizontal"
-                android:paddingTop="30dp"
-                />
-
-
-
-
-        </androidx.cardview.widget.CardView>
 
 
 

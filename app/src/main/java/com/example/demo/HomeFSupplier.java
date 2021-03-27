@@ -29,8 +29,6 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
         c2=findViewById(R.id.c2);
         c3=findViewById(R.id.c3);
         c4=findViewById(R.id.c4);
-        c5=findViewById(R.id.c5);
-        c6=findViewById(R.id.c6);
 
         ///set the toolbar previous icon
         Toolbar toolbar=findViewById(R.id.toolbar);
@@ -40,8 +38,7 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
     c2.setOnClickListener(this);
     c3.setOnClickListener(this);
     c4.setOnClickListener(this);
-    c5.setOnClickListener(this);
-    c6.setOnClickListener(this);
+
 
 
     }
@@ -103,26 +100,18 @@ public class HomeFSupplier extends AppCompatActivity implements View.OnClickList
                 startActivity(i);
                 break;
             case R.id.c2:
-                i=new Intent(getApplicationContext(),OrderCardPay.class);
+                i=new Intent(getApplicationContext(),DeliveredOrder.class);
                 startActivity(i);
                 break;
             case R.id.c3:
-                i=new Intent(getApplicationContext(),DeliveredOrder.class);
+                i=new Intent(getApplicationContext(),ProfilePageFS.class);
                 startActivity(i);
                 break;
             case R.id.c4:
                 i=new Intent(getApplicationContext(),MyPostsFSupplier.class);
                 startActivity(i);
                 break;
-            case R.id.c5:
-                i=new Intent(getApplicationContext(),ProfilePageFS.class);
-                startActivity(i);
-                break;
 
-            case R.id.c6:
-                i=new Intent(getApplicationContext(),SettingFS.class);
-                startActivity(i);
-                break;
 
         }
 

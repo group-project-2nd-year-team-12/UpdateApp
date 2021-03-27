@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:background="#ffffff">
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
+        style="@style/ShapeAppearance.Neumorph.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="7dp">
@@ -14,7 +15,7 @@
 
         <ImageView
             android:layout_width="300dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="30dp"
             android:layout_height="200dp"
             android:id="@+id/imgpostfs"
             android:layout_marginTop="20dp"
@@ -26,21 +27,23 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="250dp">
 
-            <TextView
-                android:layout_width="110dp"
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
-                android:text="Restaurant Name"
+                android:text="Restaurant \n Name"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 />
 
-            <TextView
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rasika Food Delivary Service"
                 android:id="@+id/title"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"/>
         </LinearLayout>
         <LinearLayout
@@ -50,20 +53,22 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="290dp">
 
-            <TextView
-                android:layout_width="110dp"
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:text="Address:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 />
-            <TextView
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Old road,Maharagama"
                 android:id="@+id/address"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"/>
         </LinearLayout>
         <LinearLayout
@@ -71,46 +76,50 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="320dp">
+            android:layout_marginTop="335dp">
 
-            <TextView
-                android:layout_width="110dp"
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:text="Rating:"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 />
-            <TextView
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="23"
                 android:id="@+id/rating"
-                android:textColor="#000"
-                android:textSize="16sp"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="350dp">
+            android:layout_marginTop="365dp">
 
-            <TextView
-                android:layout_width="110dp"
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:text="Lifespan:"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 />
-            <TextView
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3 Months"
                 android:id="@+id/lifespan"
-                android:textColor="#000"
-                android:textSize="16sp"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -118,29 +127,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="395dp"
             android:layout_marginBottom="20dp">
 
-            <TextView
-                android:layout_width="110dp"
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:text="Post Amount:"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimaryDark"
                 />
-            <TextView
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3000"
                 android:id="@+id/pamount"
-                android:textColor="#000"
-                android:textSize="16sp"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"/>
         </LinearLayout>
 
 
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
 
 </LinearLayout>

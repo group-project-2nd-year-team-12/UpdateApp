@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        app:cardCornerRadius="60dp"
+        android:layout_marginTop="-90dp"
+    >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#02075d"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="145dp"
+
+
+                android:src="@drawable/anuki"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginTop="140dp"/>
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="wrap_content"
+                android:id="@+id/title"
+                android:layout_height="wrap_content"
+
+                android:textColor="#fff"
+
+                android:text="Anuki de Alwis"
+                android:layout_marginLeft="148dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/ShapeAppearance.Neumorph.CardView"
+        app:neumorph_shapeType="flat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:id="@+id/name1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:text="Name:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#02075d"
+                android:textStyle="bold"/>
+
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Anuki de Alwis"
+                android:textSize="18sp"
+
+                android:textColor="#02075d"
+
+                android:layout_marginTop="5dp"
+
+
+                />
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:id="@+id/email1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:text="Email:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="#02075d"/>
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="anuki@gmail.com"
+                android:textSize="18sp"
+
+                android:textColor="#02075d"
+
+                android:layout_marginTop="5dp"
+
+                />
+
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:id="@+id/address1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:text="Address:"
+                android:textColor="#02075d"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                />
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="33,Kularathne Mw,Kottawa"
+                android:textSize="16sp"
+
+                android:textColor="#02075d"
+
+                android:layout_marginTop="5dp"
+
+                />
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:id="@+id/nic1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+
+                android:text="NIC No:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#02075d"
+                android:textStyle="bold"/>
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/nic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="076-3322124"
+
+                android:textSize="18sp"
+                android:textColor="#02075d"
+
+                android:layout_marginTop="5dp"
+
+
+                />
+
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+
+<!--        <soup.neumorphism.NeumorphTextView-->
+<!--            style="@style/Widget.Neumorph.TextView"-->
+<!--            android:id="@+id/name1"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="Name:"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="Anuki de Alwis"-->
+<!--            android:textSize="16dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="15dp"/>-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <soup.neumorphism.NeumorphTextView-->
+<!--            style="@style/Widget.Neumorph.TextView"-->
+<!--            android:id="@+id/email1"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="Email:"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/email"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="anuki@gmail.com"-->
+<!--            android:textSize="16dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            -->
+<!--            />-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <soup.neumorphism.NeumorphTextView-->
+<!--            style="@style/Widget.Neumorph.TextView"-->
+<!--            android:id="@+id/address1"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="Address:"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/address"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="33,Kularathne Mw,Kottawa"-->
+<!--            android:textSize="16dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"/>-->
+
+
+<!--    </LinearLayout>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <soup.neumorphism.NeumorphTextView-->
+<!--            style="@style/Widget.Neumorph.TextView"-->
+<!--            android:id="@+id/nic1"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="NIC No:"-->
+<!--            android:textSize="16dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/nic"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="076-3322124"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            />-->
+
+
+<!--    </LinearLayout>-->
+
+
+
+
+</LinearLayout>

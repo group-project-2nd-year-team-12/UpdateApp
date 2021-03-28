@@ -217,7 +217,7 @@ public class ProfilePageFS extends AppCompatActivity {
 
         myadapter(Context c,String email[],String first_name[], String last_name[], String address[],String NIC[],String profile[])
         {
-            super(c,R.layout.row_profile_bofs,R.id.email,email);
+            super(c,R.layout.row_new_profile_bofs,R.id.email,email);
             context=c;
             this.email=email;
             this.first_name=first_name;
@@ -234,7 +234,7 @@ public class ProfilePageFS extends AppCompatActivity {
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
         {
             LayoutInflater inflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row=inflater.inflate(R.layout.row_profile_bofs,parent,false);
+            View row=inflater.inflate(R.layout.row_new_profile_bofs,parent,false);
 
             //ImageView img=row.findViewById(R.id.img1);
 

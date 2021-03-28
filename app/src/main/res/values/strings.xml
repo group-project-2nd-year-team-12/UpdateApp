@@ -2,6 +2,9 @@
     <string name="app_name">Demo</string>
     <string name="view_order"><u>View Order</u></string>
     <string name="view_boarder"><u>click here</u></string>
+    <string name="get_det"><u>Bill Details</u></string>
+    <string name="pick_det"><u>Pick Delivery time</u></string>
+    <string name="deli_det"><u>Delivary Details</u></string>
     <string-array name="level">
         <item>boarder</item>
         <item>boardings_owner</item>

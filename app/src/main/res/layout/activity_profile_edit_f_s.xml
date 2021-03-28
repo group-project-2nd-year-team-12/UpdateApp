@@ -5,7 +5,9 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".ProfileEditFS"
-android:orientation="vertical">
+android:orientation="vertical"
+    android:background="#ffffff">
+
 
 <androidx.appcompat.widget.Toolbar
     android:layout_width="match_parent"
@@ -22,121 +24,306 @@ android:orientation="vertical">
     tools:context=".ProfileEditFS"
 </androidx.appcompat.widget.Toolbar>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="100dp"
-    >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp">
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="First Name:"
-            android:textStyle="bold"
-            android:textColor="#000"/>
-        <EditText
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="ishan"
-            android:textSize="20sp"
-
-            android:id="@+id/first_name"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp">
-
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:text="Last Name:"/>
-
-        <EditText
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="ishan"
-            android:textSize="20sp"
-            android:id="@+id/last_name"/>
-
+        >
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="190dp"
+            android:src="@drawable/pe"
+            android:layout_marginLeft="100dp"/>
     </LinearLayout>
 
-    <LinearLayout
+    <soup.neumorphism.NeumorphCardView
+        style="@style/ShapeAppearance.Neumorph.CardView"
+        app:neumorph_shapeType="flat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp">
+        android:layout_height="80dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:text="Institute:"/>
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:id="@+id/name1"
 
-        <EditText
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="University of Colombo"
-            android:textSize="20sp"
-            android:id="@+id/address"/>
+                android:layout_height="wrap_content"
 
-    </LinearLayout>
+                android:layout_width="100dp"
+                android:text="First Name:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#02075d"
+                android:textStyle="bold"/>
 
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ishan"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#02075d"
 
-    <LinearLayout
+                android:id="@+id/first_name"/>
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/ShapeAppearance.Neumorph.CardView"
+        app:neumorph_shapeType="flat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp">
+        android:layout_height="80dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+           >
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:text="NIC:"/>
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
 
-        <EditText
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:text="ishan"
-            android:textSize="20sp"
-            android:id="@+id/nic"/>
 
-    </LinearLayout>
+                android:layout_height="wrap_content"
 
+                android:layout_width="100dp"
+                android:text="Last Name:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#02075d"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ishan"
+                android:textSize="18sp"
+
+                android:textStyle="bold"
+                android:textColor="#02075d"
+                android:id="@+id/last_name"/>
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/ShapeAppearance.Neumorph.CardView"
+        app:neumorph_shapeType="flat"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+
+
+                android:layout_height="wrap_content"
+
+                android:layout_width="100dp"
+                android:text="Address:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#02075d"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ishan"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#02075d"
+
+                android:id="@+id/address"/>
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/ShapeAppearance.Neumorph.CardView"
+        app:neumorph_shapeType="flat"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+
+
+                android:layout_height="wrap_content"
+
+                android:layout_width="100dp"
+                android:text="NIC:"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#02075d"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ishan"
+                android:textStyle="bold"
+                android:textColor="#02075d"
+                android:textSize="18sp"
+
+                android:id="@+id/nic"/>
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+
+
+
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+
+<!--    >-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginLeft="30dp">-->
+<!--        <TextView-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            android:text="First Name:"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"/>-->
+<!--        <EditText-->
+<!--            android:layout_width="230dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="ishan"-->
+<!--            android:textSize="20sp"-->
+
+<!--            android:id="@+id/first_name"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginLeft="30dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"-->
+<!--            android:text="Last Name:"/>-->
+
+<!--        <EditText-->
+<!--            android:layout_width="230dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="ishan"-->
+<!--            android:textSize="20sp"-->
+<!--            android:id="@+id/last_name"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginLeft="30dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"-->
+<!--            android:text="Institute:"/>-->
+
+<!--        <EditText-->
+<!--            android:layout_width="230dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="University of Colombo"-->
+<!--            android:textSize="20sp"-->
+<!--            android:id="@+id/address"/>-->
+
+<!--    </LinearLayout>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginLeft="30dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000"-->
+<!--            android:text="NIC:"/>-->
+
+<!--        <EditText-->
+<!--            android:layout_width="230dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="ishan"-->
+<!--            android:textSize="20sp"-->
+<!--            android:id="@+id/nic"/>-->
+
+<!--    </LinearLayout>-->
 
     <Button
         android:id="@+id/update"
-        android:layout_width="250dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="70dp"
-        android:background="@drawable/editbutton_round"
-        android:onClick="onUpdateFS"
-        android:textSize="22sp"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/profile_button"
+        android:textColor="#FFF"
         android:text="Update"
-        android:textStyle="bold"
-        android:textColor="#fff" />
+
+        android:onClick="onUpdateFS"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="20dp"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/update"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="63dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginLeft="70dp"-->
+<!--        android:background="@drawable/editbutton_round"-->
+<!--        android:onClick="onUpdateFS"-->
+<!--        android:textSize="22sp"-->
+<!--        android:text="Update"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#fff" />-->
 
 
 
-</LinearLayout>
+
 
 
 </LinearLayout>
